@@ -114,10 +114,12 @@ Checkpoint and adapter files retain their original precision and hashes. Exact a
 
 The new common native typed-decision comparison against pinned Kev-4B and Jev is documented in [BENCHMARKS.md](BENCHMARKS.md), with separate public-development and authored-Russian denominators, probability metrics and reproducibility commands. It is distinct from the routing-composition evidence below.
 
-| Native comparison | Fev-4B | Kev-4B | Jev-1.14.0 |
+| Native comparison | Fev‑4B | Kev‑4B | Jev‑1.14.0 |
 |---|---:|---:|---:|
-| Public development, 764 questions | 83.6% | 80.2% | 84.6% |
-| Authored Russian, 144 questions | 100.0% | 99.3% | 100.0% |
+| Public development | 83.6% | 80.2% | 84.6% |
+| Russian probes | 100.0% | 99.3% | 100.0% |
+
+Public development: 764 questions. Authored Russian probes: 144 questions.
 
 All three systems received the same inputs, with zero failed responses. Open-model measurements use their BF16 serving paths; Jev uses its pinned hosted API. The public suite is already published development data, and Russian probes repeat templates. These are engineering comparisons, not unseen-customer accuracy. No comparison inputs were used by the new trainer.
 

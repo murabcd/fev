@@ -32,11 +32,13 @@ The context limit is an execution bound, not a measured long-document accuracy g
 
 ### Comparison
 
-| Model | Public development · 764 questions | Authored Russian · 144 questions | Combined · 908 questions | Brier · public ↓ |
+| Model | Public dev. | Russian probes | Combined | Brier ↓ |
 |---|---:|---:|---:|---:|
-| **Fev-4B** | **83.6%** | **100.0%** | **86.2%** | **0.2330** |
-| Kev-4B | 80.2% | 99.3% | 83.3% | 0.2543 |
-| Jev-1.14.0 | 84.6% | 100.0% | 87.0% | 0.2250 |
+| **Fev‑4B** | **83.6%** | **100.0%** | **86.2%** | **0.2330** |
+| Kev‑4B | 80.2% | 99.3% | 83.3% | 0.2543 |
+| Jev‑1.14.0 | 84.6% | 100.0% | 87.0% | 0.2250 |
+
+Public development: 764 questions. Authored Russian probes: 144 questions. Combined: 908 questions. Brier is measured on the public split; lower is better.
 
 Same 812 requests, zero failed responses. Open models use their BF16 serving paths on the same GPU class; Jev uses its pinned hosted API. This is not Kev's published FP32 evaluation. The public suite is already published development data; Russian probes repeat authored templates. Results are engineering comparisons, not customer accuracy or production resolution. No comparison inputs entered the new trainer. [Methods, revisions and raw results](BENCHMARKS.md).
 
