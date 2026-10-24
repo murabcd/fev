@@ -1,6 +1,6 @@
 # Fev
 
-A customer-agnostic 4B decision model from Flomni. Classify, route, triage and check supplied rules without generating text. Categories, instructions, examples and history are runtime inputs.
+A customer-agnostic 4B decision model by [Murad](https://github.com/murabcd). Classify, route, triage and check supplied rules without generating text. Categories, instructions, examples and history are runtime inputs.
 
 **Weights and model card:** [murabcd/fev-4b](https://huggingface.co/murabcd/fev-4b).
 

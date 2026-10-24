@@ -26,7 +26,7 @@ This card describes Fev v0.2.0. The weights and routing policy are unchanged fro
 
 | | |
 |---|---|
-| Developer | Flomni ([github.com/murabcd/fev](https://github.com/murabcd/fev)) |
+| Developer | Murad ([github.com/murabcd/fev](https://github.com/murabcd/fev)) |
 | Model type | Decision model: shared state and questions scored by a native readout; no text generation |
 | Backbone | Qwen3.5-4B architecture; noncausal full attention |
 | Adapter | Shared LoRA, rank 8, alpha 16; 10,387,456 parameters |
