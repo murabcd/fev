@@ -1,0 +1,42 @@
+{
+  "model": "Fev-4B",
+  "version": "0.2.0",
+  "publisher": "murabcd",
+  "baseCheckpoint": {
+    "repo": "perplexity-ai/pplx-decider-flash-v1.2",
+    "revision": "9ff7cf9838e59df461c276b7699d56b244d2af58",
+    "architectureBase": "Qwen/Qwen3.5-4B",
+    "architectureBaseRevision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+  },
+  "checkpointModified": false,
+  "adapterMerged": false,
+  "quantized": false,
+  "customerSpecificTraining": false,
+  "runtime": {
+    "maxLength": 16384,
+    "batchTokens": 16384,
+    "nativeTemperature": 1.5539092221462472,
+    "seed": 20261030,
+    "thresholds": {
+      "yes": 0.8,
+      "no": 0.2
+    }
+  },
+  "adapterHashes": {
+    "adapter_model.safetensors": "d99aa5a075e3b2f1d96974ac5f766da788531a644d4f6113b095e62213b8b10a",
+    "adapter_config.json": "38213028a52ba9f00e6c2a1be5e1c053113014bd1e6048e5860781f4ca5af697"
+  },
+  "frozenRuntimeHashes": {
+    "fev/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "fev/sufficiency.py": "f47e29b6fc6a51013ecb016c8204ff49ac8adbabdbfdd0eb6bf8fdddb63f4270",
+    "fev/intent_membership.py": "05d987235c9a7e109dfa3d2280d29a75fea5b48beab89ba2419fac6923c62890",
+    "fev/ranked_requests.py": "6ceef64cd82dbea0fc4ff77518ec262e67d2a9ef5f51755e84b2f28ec3020479",
+    "fev/ranked_membership.py": "b9dbe8220a4f37fc484c1c6ac4312fec7ff691b0d783b73bca896ecec8699351",
+    "fev/route_applicability.py": "212bbc41d607dd81eb042f4f0a51cafe4f511274f8e9ebce78ebc96e260f2694",
+    "fev/research_controls.py": "853f748d4bc49aa079e03a5bd375cbb07012de578d1ebddd205ccaf300101c79"
+  },
+  "sourceFrozenManifestSha256": "28652bb88f086b2be4c6251dda581f5bdfdf4466ec09bf862e6eca005dab0cbf",
+  "upstreamManifestNote": "Upstream README hash was stale; execution artifacts all verified. Package manifest records the actual included README hash.",
+  "weightsUnchangedSinceVersion": "0.1.0",
+  "sourceRepository": "https://github.com/murabcd/fev"
+}
