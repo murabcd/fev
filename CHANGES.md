@@ -1,5 +1,9 @@
 # Release composition
 
+## v0.2.1 candidate (unpublished)
+
+Adds opt-in compiled execution, an explicit verified adapter overlay, native shared-adapter training, grouped dataset splitting, separate temperature calibration, typed benchmark tooling and the `fev-finetune` agent skill. The baseline checkpoint, original shared adapter, tokenizer, native source, temperature and routing policy remain unchanged. Reference execution stays the default. Research training outputs are separate overlays and are not adopted or distributed as released weights. Benchmark methods and limitations are recorded in [BENCHMARKS.md](BENCHMARKS.md).
+
 ## v0.2.0
 
 Adds the text-only `Fev4B.decide` interface, a resident reference HTTP server for `POST /v1/systemone` and `GET /v1/models`, strict typed-request/response validation, zstd decoding, TypeSafe SDK contract checks, and public GitHub documentation. Choice, Noul and Score use the existing native decision head. No checkpoint, shared adapter, tokenizer, native source, temperature, precision, routing primitive or routing cutoff changed. The routing response version is now 0.2.0.

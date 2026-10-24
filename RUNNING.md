@@ -68,4 +68,16 @@ Do not run with Python `-O`; native research invariants include assertions. This
 
 ## Typed decisions and HTTP
 
-`Fev4B.decide` exposes Choice, Noul and Score without the routing policy. Use `serve.py` for the text-only System One endpoint; see [API.md](API.md). The weights and routing policy are unchanged from v0.1.0.
+`Fev4B.decide` exposes Choice, Noul and Score without the routing policy. Use `serve.py` for the text-only System One endpoint; see [API.md](API.md). The typed interface scores the supplied questions without applying the conversation-routing policy.
+
+## Execution mode and explicit adapters
+
+`--execution reference` is the default. `--execution compiled` enables only the qualified layer-compilation options; kernels are compiled lazily. It retains the BF16 backbone and FP32 unmerged adapter. Warm speed measurements do not include compilation and are not throughput guarantees. See [BENCHMARKS.md](BENCHMARKS.md) for the exact tested workloads and probability/parity limits.
+
+The Python constructor accepts the same selection:
+
+```python
+model = Fev4B("models/fev-4b", execution="compiled")
+```
+
+A research adapter is loaded only with explicit `adaptation_dir=...` or `--adaptation-dir ...`. It is checked against the base identity and payload hashes before use. Reference weights are never overwritten. Newly trained or calibrated overlays need their own routing-quality and compiled-parity checks; the released checkpoint's results do not transfer automatically. See [TRAINING.md](TRAINING.md).

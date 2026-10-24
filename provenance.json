@@ -1,6 +1,6 @@
 {
   "model": "Fev-4B",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "publisher": "murabcd",
   "baseCheckpoint": {
     "repo": "perplexity-ai/pplx-decider-flash-v1.2",
@@ -38,5 +38,18 @@
   "sourceFrozenManifestSha256": "28652bb88f086b2be4c6251dda581f5bdfdf4466ec09bf862e6eca005dab0cbf",
   "upstreamManifestNote": "Upstream README hash was stale; execution artifacts all verified. Package manifest records the actual included README hash.",
   "weightsUnchangedSinceVersion": "0.1.0",
-  "sourceRepository": "https://github.com/murabcd/fev"
+  "sourceRepository": "https://github.com/murabcd/fev",
+  "releaseStatus": "unpublished candidate",
+  "executionModes": {
+    "default": "reference",
+    "optional": "compiled",
+    "cudaGraphs": false,
+    "fp8": false,
+    "readoutPruning": false,
+    "prefetch": false
+  },
+  "researchTraining": {
+    "tooling": "shared rank-8 decision cross-entropy; explicit separate overlay",
+    "adoptedIntoReleasedWeights": false
+  }
 }

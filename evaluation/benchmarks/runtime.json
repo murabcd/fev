@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-24",
+  "hardware": "NVIDIA A10G 24GB",
+  "weightsChanged": false,
+  "referenceDefault": true,
+  "executionOptions": {
+    "compile": "layer",
+    "cuda_graphs": false,
+    "prune_last": false,
+    "fp8": false,
+    "prefetch": false,
+    "token_budget": 16384
+  },
+  "finalDecisionRegression": {
+    "complete": true,
+    "cases": 303,
+    "finalMatches": 303,
+    "candidateSetChanges": 33,
+    "sameJobControls": 4,
+    "allSameJobControlsMatch": true,
+    "firstFinalMismatch": null,
+    "error": null,
+    "timings": {
+      "reference": {
+        "n": 15,
+        "medianMs": 2451.9707610002115,
+        "p95Ms": 2539.2162020002615
+      },
+      "compiled": {
+        "n": 15,
+        "medianMs": 1690.3312350000306,
+        "p95Ms": 1733.433431999856
+      }
+    },
+    "medianReductionPercent": 31.062341285403082,
+    "p95Ratio": 0.6826647650697676,
+    "peakAllocatedBytes": {
+      "reference": 9997422592,
+      "compiled": 10086032384
+    },
+    "allocatedMemoryRatio": 1.0088632636246573,
+    "localAdoptionEligible": true
+  },
+  "packagedIntegration": {
+    "routingControls": 6,
+    "routingMatches": 6,
+    "typedRequests": 4,
+    "typedQuestions": 12,
+    "allTypedWinnersMatch": true,
+    "maxProbabilityDelta": 0.0016201982392612946,
+    "realAuthenticatedSdkPlainAndZstdPassed": true,
+    "compiledPeakAllocatedBytes": 10086030848
+  },
+  "limitations": [
+    "15 warm timing samples per mode on three selected workloads; excludes loading, compilation, HTTP, queuing and concurrent throughput",
+    "Final decisions match on the regression; internal candidates and probabilities can differ",
+    "Packaged integration is a smaller additional check, not a second full regression",
+    "No production CPU capacity or operating-cost measurement"
+  ]
+}

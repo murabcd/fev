@@ -1,0 +1,218 @@
+{
+  "purpose": "Mechanics-only smoke validation, not improved released weights or generalization",
+  "adopted": false,
+  "training": {
+    "steps": 6,
+    "seed": 42,
+    "learningRate": 2e-05,
+    "trainRecords": 28,
+    "trainDomains": [
+      "garden",
+      "library",
+      "museum",
+      "workshop"
+    ],
+    "changedAdapterTensors": 240,
+    "backboneAndReadoutFrozen": true,
+    "seconds": 53.129103966
+  },
+  "developmentBefore": {
+    "questions": 12,
+    "answered": 12,
+    "errors": 0,
+    "correct": 12,
+    "accuracyAllQuestions": 1.0,
+    "brierAnswered": 0.0010257946398990957,
+    "nllAnswered": 0.024988250780074998,
+    "ece10Answered": 0.024658157503599232,
+    "confidentWrongAt09": 0,
+    "coverageByFixedThreshold": [
+      {
+        "threshold": 0.5,
+        "accepted": 12,
+        "coverage": 1.0,
+        "errorRate": 0.0
+      },
+      {
+        "threshold": 0.7,
+        "accepted": 12,
+        "coverage": 1.0,
+        "errorRate": 0.0
+      },
+      {
+        "threshold": 0.8,
+        "accepted": 12,
+        "coverage": 1.0,
+        "errorRate": 0.0
+      },
+      {
+        "threshold": 0.9,
+        "accepted": 12,
+        "coverage": 1.0,
+        "errorRate": 0.0
+      },
+      {
+        "threshold": 0.95,
+        "accepted": 12,
+        "coverage": 1.0,
+        "errorRate": 0.0
+      },
+      {
+        "threshold": 0.99,
+        "accepted": 0,
+        "coverage": 0.0,
+        "errorRate": null
+      }
+    ],
+    "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+  },
+  "developmentAfter": {
+    "questions": 12,
+    "answered": 12,
+    "errors": 0,
+    "correct": 12,
+    "accuracyAllQuestions": 1.0,
+    "brierAnswered": 3.058330986685694e-05,
+    "nllAnswered": 0.004121613352848992,
+    "ece10Answered": 0.0041117529524682395,
+    "confidentWrongAt09": 0,
+    "coverageByFixedThreshold": [
+      {
+        "threshold": 0.5,
+        "accepted": 12,
+        "coverage": 1.0,
+        "errorRate": 0.0
+      },
+      {
+        "threshold": 0.7,
+        "accepted": 12,
+        "coverage": 1.0,
+        "errorRate": 0.0
+      },
+      {
+        "threshold": 0.8,
+        "accepted": 12,
+        "coverage": 1.0,
+        "errorRate": 0.0
+      },
+      {
+        "threshold": 0.9,
+        "accepted": 12,
+        "coverage": 1.0,
+        "errorRate": 0.0
+      },
+      {
+        "threshold": 0.95,
+        "accepted": 12,
+        "coverage": 1.0,
+        "errorRate": 0.0
+      },
+      {
+        "threshold": 0.99,
+        "accepted": 12,
+        "coverage": 1.0,
+        "errorRate": 0.0
+      }
+    ],
+    "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+  },
+  "reload": {
+    "complete": true,
+    "adopted": false,
+    "priorStrictGateFailed": true,
+    "all240AdapterTensorsBitExact": true,
+    "freshRepeat": {
+      "maxProbabilityDelta": 0.0,
+      "sameAllTopOptions": true,
+      "questions": 12
+    },
+    "crossProcessReload": {
+      "maxProbabilityDelta": 0.0,
+      "sameAllTopOptions": true,
+      "questions": 12
+    },
+    "originalStrictTolerancePassed": true,
+    "calibrationAndTestPassed": true,
+    "seconds": 196.0350929440001
+  },
+  "initialStrictReloadFailure": {
+    "maxProbabilityDelta": 0.00048164095202640755,
+    "tolerance": 1e-05,
+    "failed": true,
+    "interpretation": "Observed after compiled/HTTP work in the original process. Cause was not isolated. Preserved rather than erased by the successful fresh-process control."
+  },
+  "calibration": {
+    "records": 4,
+    "factor": 0.1353352832366127,
+    "factorBounds": [
+      0.1353352832366127,
+      7.38905609893065
+    ],
+    "beforeNll": 0.003907485844979199,
+    "afterNll": 0.0,
+    "interpretation": "In-sample calibration fit; independent test needed before adoption",
+    "lowerBoundSelected": true
+  },
+  "toyTest": {
+    "questions": 12,
+    "answered": 12,
+    "errors": 0,
+    "correct": 12,
+    "accuracyAllQuestions": 1.0,
+    "brierAnswered": 3.9934072114968966e-38,
+    "nllAnswered": 0.0,
+    "ece10Answered": 0.0,
+    "confidentWrongAt09": 0,
+    "coverageByFixedThreshold": [
+      {
+        "threshold": 0.5,
+        "accepted": 12,
+        "coverage": 1.0,
+        "errorRate": 0.0
+      },
+      {
+        "threshold": 0.7,
+        "accepted": 12,
+        "coverage": 1.0,
+        "errorRate": 0.0
+      },
+      {
+        "threshold": 0.8,
+        "accepted": 12,
+        "coverage": 1.0,
+        "errorRate": 0.0
+      },
+      {
+        "threshold": 0.9,
+        "accepted": 12,
+        "coverage": 1.0,
+        "errorRate": 0.0
+      },
+      {
+        "threshold": 0.95,
+        "accepted": 12,
+        "coverage": 1.0,
+        "errorRate": 0.0
+      },
+      {
+        "threshold": 0.99,
+        "accepted": 12,
+        "coverage": 1.0,
+        "errorRate": 0.0
+      }
+    ],
+    "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+  },
+  "inputHashes": {
+    "train.jsonl": "cef745ddee9bf2e1d8f3639660441505bfb5aacf2c5cf9de5261a17ac1ba0bb5",
+    "development.jsonl": "c7da14026dbfd87b5dac9040c7b6ed33d3007b620aab018dc9c25ca5ce6d9059",
+    "calibration.jsonl": "b951c82c4263d6b0ec058b704f1d3d616ae85f483dc3d6dfdad49bed61c7481c",
+    "test.jsonl": "00baffcf3d9114d585294dd0955724ad9aff04475d3e9105584c9f1bbfbfbc8a"
+  },
+  "limitations": [
+    "Authored toy templates recur across partitions; this is not an independent cross-domain generalization test",
+    "Development was already 12/12 correct before training",
+    "Calibration chose its lower search bound on a tiny all-correct sample; this is not evidence of deployment calibration",
+    "No trained overlay or fitted temperature is adopted or included in the release"
+  ]
+}

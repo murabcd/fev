@@ -18,6 +18,7 @@ from fev.ranked_membership import resolve
 from fev.research_controls import compare_responses
 from .integrity import verify_package
 from .decisions import decide_with_predict, validate_request
+from .version import VERSION
 
 
 def route_with_predict(request, *, unknown_key, predict):
@@ -45,7 +46,7 @@ def route_with_predict(request, *, unknown_key, predict):
         evidence.update({key: value['noul'] for key, value in secondary['answers'].items()})
     decision = resolve(evidence, choice, config['precedence'], unknown_key=unknown_key, yes=.8, no=.2)
     responses = [primary] + ([secondary] if secondary is not None else [])
-    return {'model': 'Fev-4B', 'version': '0.2.0', 'decision': decision,
+    return {'model': 'Fev-4B', 'version': VERSION, 'decision': decision,
             'route': decision.get('key'), 'probabilities': choice, 'applicability': evidence,
             'queriedKeys': config['queriedKeys'], 'precedence': config['precedence'],
             'usage': {key: sum(part['usage'][key] for part in responses)
@@ -59,7 +60,9 @@ class Fev4B:
     One instance keeps weights resident. Calls are serialized because concurrency
     and concurrent GPU-memory use have not been qualified for this release.
     """
-    def __init__(self, directory, *, device='cuda:0'):
+    def __init__(self, directory, *, device='cuda:0', execution='reference', adaptation_dir=None):
+        if execution not in ('reference', 'compiled'):
+            raise ValueError('execution must be reference or compiled')
         self.root = Path(directory).resolve()
         self.integrity = verify_package(self.root)
         # All files are bundled. Runtime inference must not resolve Hub resources.
@@ -106,6 +109,19 @@ class Fev4B:
         if len(loras) != 240 or sum(p.numel() for p in loras) != 10387456 or not all(p.dtype == torch.float32 for p in loras):
             raise ValueError('Adapter shape or dtype differs from the benchmark')
         self.model.backbone.eval()
+        self.adaptation = None
+        if adaptation_dir is not None:
+            from .adaptation import load_adaptation
+            self.adaptation = load_adaptation(self, adaptation_dir)
+        # Construct after restoring the shared adapter. Graphs, FP8, pruning and
+        # prefetching were not qualified and are intentionally disabled.
+        if execution == 'compiled':
+            from pplx_decider.fast import FastPath
+            from pplx_decider.model import FastOptions
+            self.model.fast = FastPath(self.model, FastOptions(
+                compile='layer', cuda_graphs=False, prune_last=False,
+                fp8=False, prefetch=False, token_budget=16384))
+        self.execution = execution
         self.parameters = list(self.model.backbone.parameters()) + list(self.model.readout.parameters())
         if any(p.requires_grad for p in self.parameters):
             raise ValueError('Inference parameters must be frozen')

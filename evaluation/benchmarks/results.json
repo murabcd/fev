@@ -1,0 +1,2334 @@
+{
+  "models": {
+    "Fev": {
+      "all": {
+        "questions": 908,
+        "answered": 908,
+        "errors": 0,
+        "correct": 783,
+        "accuracyAllQuestions": 0.8623348017621145,
+        "brierAnswered": 0.19616500539754675,
+        "nllAnswered": 0.374025080065555,
+        "ece10Answered": 0.04207503699664424,
+        "confidentWrongAt09": 26,
+        "coverageByFixedThreshold": [
+          {
+            "threshold": 0.5,
+            "accepted": 889,
+            "coverage": 0.9790748898678414,
+            "errorRate": 0.12373453318335208
+          },
+          {
+            "threshold": 0.7,
+            "accepted": 819,
+            "coverage": 0.9019823788546255,
+            "errorRate": 0.08424908424908426
+          },
+          {
+            "threshold": 0.8,
+            "accepted": 767,
+            "coverage": 0.8447136563876652,
+            "errorRate": 0.06649282920469361
+          },
+          {
+            "threshold": 0.9,
+            "accepted": 676,
+            "coverage": 0.7444933920704846,
+            "errorRate": 0.038461538461538464
+          },
+          {
+            "threshold": 0.95,
+            "accepted": 567,
+            "coverage": 0.6244493392070485,
+            "errorRate": 0.012345679012345678
+          },
+          {
+            "threshold": 0.99,
+            "accepted": 0,
+            "coverage": 0.0,
+            "errorRate": null
+          }
+        ],
+        "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here.",
+        "ordinalMeanAbsoluteError": 0.060723818086750196
+      },
+      "publicTransfer": {
+        "questions": 764,
+        "answered": 764,
+        "errors": 0,
+        "correct": 639,
+        "accuracyAllQuestions": 0.8363874345549738,
+        "brierAnswered": 0.2329500652363337,
+        "nllAnswered": 0.43991052107250256,
+        "ece10Answered": 0.054555210421981894,
+        "confidentWrongAt09": 26,
+        "coverageByFixedThreshold": [
+          {
+            "threshold": 0.5,
+            "accepted": 745,
+            "coverage": 0.975130890052356,
+            "errorRate": 0.1476510067114094
+          },
+          {
+            "threshold": 0.7,
+            "accepted": 675,
+            "coverage": 0.8835078534031413,
+            "errorRate": 0.10222222222222223
+          },
+          {
+            "threshold": 0.8,
+            "accepted": 623,
+            "coverage": 0.8154450261780105,
+            "errorRate": 0.08186195826645265
+          },
+          {
+            "threshold": 0.9,
+            "accepted": 532,
+            "coverage": 0.6963350785340314,
+            "errorRate": 0.04887218045112782
+          },
+          {
+            "threshold": 0.95,
+            "accepted": 423,
+            "coverage": 0.5536649214659686,
+            "errorRate": 0.016548463356973995
+          },
+          {
+            "threshold": 0.99,
+            "accepted": 0,
+            "coverage": 0.0,
+            "errorRate": null
+          }
+        ],
+        "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here.",
+        "ordinalMeanAbsoluteError": 0.10620271886956209
+      },
+      "authoredRussian": {
+        "questions": 144,
+        "answered": 144,
+        "errors": 0,
+        "correct": 144,
+        "accuracyAllQuestions": 1.0,
+        "brierAnswered": 0.0009998268084272204,
+        "nllAnswered": 0.024466212500916604,
+        "ece10Answered": 0.024139216454452272,
+        "confidentWrongAt09": 0,
+        "coverageByFixedThreshold": [
+          {
+            "threshold": 0.5,
+            "accepted": 144,
+            "coverage": 1.0,
+            "errorRate": 0.0
+          },
+          {
+            "threshold": 0.7,
+            "accepted": 144,
+            "coverage": 1.0,
+            "errorRate": 0.0
+          },
+          {
+            "threshold": 0.8,
+            "accepted": 144,
+            "coverage": 1.0,
+            "errorRate": 0.0
+          },
+          {
+            "threshold": 0.9,
+            "accepted": 144,
+            "coverage": 1.0,
+            "errorRate": 0.0
+          },
+          {
+            "threshold": 0.95,
+            "accepted": 144,
+            "coverage": 1.0,
+            "errorRate": 0.0
+          },
+          {
+            "threshold": 0.99,
+            "accepted": 0,
+            "coverage": 0.0,
+            "errorRate": null
+          }
+        ],
+        "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here.",
+        "ordinalMeanAbsoluteError": 0.02282473410107361
+      },
+      "byType": {
+        "choice": {
+          "questions": 492,
+          "answered": 492,
+          "errors": 0,
+          "correct": 400,
+          "accuracyAllQuestions": 0.8130081300813008,
+          "brierAnswered": 0.2615263089500927,
+          "nllAnswered": 0.5247360934156637,
+          "ece10Answered": 0.06533461933177653,
+          "confidentWrongAt09": 20,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 473,
+              "coverage": 0.9613821138211383,
+              "errorRate": 0.16279069767441862
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 424,
+              "coverage": 0.8617886178861789,
+              "errorRate": 0.10377358490566038
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 386,
+              "coverage": 0.7845528455284553,
+              "errorRate": 0.08031088082901554
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 331,
+              "coverage": 0.6727642276422764,
+              "errorRate": 0.06042296072507553
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 267,
+              "coverage": 0.5426829268292683,
+              "errorRate": 0.026217228464419477
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 0,
+              "coverage": 0.0,
+              "errorRate": null
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "noul": {
+          "questions": 328,
+          "answered": 328,
+          "errors": 0,
+          "correct": 298,
+          "accuracyAllQuestions": 0.9085365853658537,
+          "brierAnswered": 0.13871514597249474,
+          "nllAnswered": 0.22139737153892355,
+          "ece10Answered": 0.04994271263817423,
+          "confidentWrongAt09": 5,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 328,
+              "coverage": 1.0,
+              "errorRate": 0.09146341463414634
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 309,
+              "coverage": 0.9420731707317073,
+              "errorRate": 0.07766990291262135
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 296,
+              "coverage": 0.9024390243902439,
+              "errorRate": 0.06418918918918919
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 261,
+              "coverage": 0.7957317073170732,
+              "errorRate": 0.019157088122605363
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 220,
+              "coverage": 0.6707317073170732,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 0,
+              "coverage": 0.0,
+              "errorRate": null
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "score": {
+          "questions": 88,
+          "answered": 88,
+          "errors": 0,
+          "correct": 85,
+          "accuracyAllQuestions": 0.9659090909090909,
+          "brierAnswered": 0.04486719339259727,
+          "nllAnswered": 0.10029860084375529,
+          "ece10Answered": 0.03799778408573792,
+          "confidentWrongAt09": 1,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 88,
+              "coverage": 1.0,
+              "errorRate": 0.03409090909090909
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 86,
+              "coverage": 0.9772727272727273,
+              "errorRate": 0.011627906976744186
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 85,
+              "coverage": 0.9659090909090909,
+              "errorRate": 0.011764705882352941
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 84,
+              "coverage": 0.9545454545454546,
+              "errorRate": 0.011904761904761904
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 80,
+              "coverage": 0.9090909090909091,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 0,
+              "coverage": 0.0,
+              "errorRate": null
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        }
+      },
+      "bySource": {
+        "authored-russian-typed": {
+          "questions": 144,
+          "answered": 144,
+          "errors": 0,
+          "correct": 144,
+          "accuracyAllQuestions": 1.0,
+          "brierAnswered": 0.0009998268084272204,
+          "nllAnswered": 0.024466212500916604,
+          "ece10Answered": 0.024139216454452272,
+          "confidentWrongAt09": 0,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 144,
+              "coverage": 1.0,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 144,
+              "coverage": 1.0,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 144,
+              "coverage": 1.0,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 144,
+              "coverage": 1.0,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 144,
+              "coverage": 1.0,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 0,
+              "coverage": 0.0,
+              "errorRate": null
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "composition_holdout": {
+          "questions": 96,
+          "answered": 96,
+          "errors": 0,
+          "correct": 84,
+          "accuracyAllQuestions": 0.875,
+          "brierAnswered": 0.18821988619559113,
+          "nllAnswered": 0.31506340814867745,
+          "ece10Answered": 0.08715274769631735,
+          "confidentWrongAt09": 9,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 96,
+              "coverage": 1.0,
+              "errorRate": 0.125
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 92,
+              "coverage": 0.9583333333333334,
+              "errorRate": 0.09782608695652174
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 92,
+              "coverage": 0.9583333333333334,
+              "errorRate": 0.09782608695652174
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 92,
+              "coverage": 0.9583333333333334,
+              "errorRate": 0.09782608695652174
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 86,
+              "coverage": 0.8958333333333334,
+              "errorRate": 0.03488372093023256
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 0,
+              "coverage": 0.0,
+              "errorRate": null
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "emotion": {
+          "questions": 116,
+          "answered": 116,
+          "errors": 0,
+          "correct": 69,
+          "accuracyAllQuestions": 0.5948275862068966,
+          "brierAnswered": 0.5245559470753833,
+          "nllAnswered": 1.0208149336604613,
+          "ece10Answered": 0.12016921458494689,
+          "confidentWrongAt09": 2,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 101,
+              "coverage": 0.8706896551724138,
+              "errorRate": 0.3564356435643564
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 70,
+              "coverage": 0.603448275862069,
+              "errorRate": 0.22857142857142856
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 44,
+              "coverage": 0.3793103448275862,
+              "errorRate": 0.18181818181818182
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 8,
+              "coverage": 0.06896551724137931,
+              "errorRate": 0.25
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 0,
+              "coverage": 0.0,
+              "errorRate": null
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 0,
+              "coverage": 0.0,
+              "errorRate": null
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "legacy_holdout": {
+          "questions": 80,
+          "answered": 80,
+          "errors": 0,
+          "correct": 77,
+          "accuracyAllQuestions": 0.9625,
+          "brierAnswered": 0.04910351545555701,
+          "nllAnswered": 0.10416551178163372,
+          "ece10Answered": 0.03574970703743059,
+          "confidentWrongAt09": 1,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 80,
+              "coverage": 1.0,
+              "errorRate": 0.0375
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 78,
+              "coverage": 0.975,
+              "errorRate": 0.01282051282051282
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 77,
+              "coverage": 0.9625,
+              "errorRate": 0.012987012987012988
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 76,
+              "coverage": 0.95,
+              "errorRate": 0.013157894736842105
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 72,
+              "coverage": 0.9,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 0,
+              "coverage": 0.0,
+              "errorRate": null
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "mmlu": {
+          "questions": 116,
+          "answered": 116,
+          "errors": 0,
+          "correct": 86,
+          "accuracyAllQuestions": 0.7413793103448276,
+          "brierAnswered": 0.39416899029285185,
+          "nllAnswered": 0.8394104030580065,
+          "ece10Answered": 0.12528513793721022,
+          "confidentWrongAt09": 9,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 112,
+              "coverage": 0.9655172413793104,
+              "errorRate": 0.23214285714285715
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 100,
+              "coverage": 0.8620689655172413,
+              "errorRate": 0.18
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 91,
+              "coverage": 0.7844827586206896,
+              "errorRate": 0.14285714285714285
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 77,
+              "coverage": 0.6637931034482759,
+              "errorRate": 0.11688311688311688
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 42,
+              "coverage": 0.3620689655172414,
+              "errorRate": 0.09523809523809523
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 0,
+              "coverage": 0.0,
+              "errorRate": null
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "paws": {
+          "questions": 80,
+          "answered": 80,
+          "errors": 0,
+          "correct": 68,
+          "accuracyAllQuestions": 0.85,
+          "brierAnswered": 0.20695251414059662,
+          "nllAnswered": 0.3140944708626177,
+          "ece10Answered": 0.08749262200436604,
+          "confidentWrongAt09": 2,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 80,
+              "coverage": 1.0,
+              "errorRate": 0.15
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 75,
+              "coverage": 0.9375,
+              "errorRate": 0.12
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 73,
+              "coverage": 0.9125,
+              "errorRate": 0.0958904109589041
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 65,
+              "coverage": 0.8125,
+              "errorRate": 0.03076923076923077
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 58,
+              "coverage": 0.725,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 0,
+              "coverage": 0.0,
+              "errorRate": null
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "qnli": {
+          "questions": 80,
+          "answered": 80,
+          "errors": 0,
+          "correct": 74,
+          "accuracyAllQuestions": 0.925,
+          "brierAnswered": 0.1185264487594759,
+          "nllAnswered": 0.19157792439378024,
+          "ece10Answered": 0.07130364771118254,
+          "confidentWrongAt09": 1,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 80,
+              "coverage": 1.0,
+              "errorRate": 0.075
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 79,
+              "coverage": 0.9875,
+              "errorRate": 0.0759493670886076
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 77,
+              "coverage": 0.9625,
+              "errorRate": 0.06493506493506493
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 71,
+              "coverage": 0.8875,
+              "errorRate": 0.014084507042253521
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 60,
+              "coverage": 0.75,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 0,
+              "coverage": 0.0,
+              "errorRate": null
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "sciq": {
+          "questions": 116,
+          "answered": 116,
+          "errors": 0,
+          "correct": 113,
+          "accuracyAllQuestions": 0.9741379310344828,
+          "brierAnswered": 0.03409531064541125,
+          "nllAnswered": 0.09114362656929587,
+          "ece10Answered": 0.05454464085684041,
+          "confidentWrongAt09": 0,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 116,
+              "coverage": 1.0,
+              "errorRate": 0.02586206896551724
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 114,
+              "coverage": 0.9827586206896551,
+              "errorRate": 0.008771929824561403
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 111,
+              "coverage": 0.9568965517241379,
+              "errorRate": 0.009009009009009009
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 106,
+              "coverage": 0.9137931034482759,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 91,
+              "coverage": 0.7844827586206896,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 0,
+              "coverage": 0.0,
+              "errorRate": null
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "tweet_offensive": {
+          "questions": 80,
+          "answered": 80,
+          "errors": 0,
+          "correct": 68,
+          "accuracyAllQuestions": 0.85,
+          "brierAnswered": 0.24263742159686036,
+          "nllAnswered": 0.38374648265869776,
+          "ece10Answered": 0.05576197181938556,
+          "confidentWrongAt09": 2,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 80,
+              "coverage": 1.0,
+              "errorRate": 0.15
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 67,
+              "coverage": 0.8375,
+              "errorRate": 0.13432835820895522
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 58,
+              "coverage": 0.725,
+              "errorRate": 0.1206896551724138
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 37,
+              "coverage": 0.4625,
+              "errorRate": 0.05405405405405406
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 14,
+              "coverage": 0.175,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 0,
+              "coverage": 0.0,
+              "errorRate": null
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        }
+      }
+    },
+    "Kev": {
+      "all": {
+        "questions": 908,
+        "answered": 908,
+        "errors": 0,
+        "correct": 756,
+        "accuracyAllQuestions": 0.8325991189427313,
+        "brierAnswered": 0.23049057438945586,
+        "nllAnswered": 0.42905102574468273,
+        "ece10Answered": 0.051600521203983195,
+        "confidentWrongAt09": 6,
+        "coverageByFixedThreshold": [
+          {
+            "threshold": 0.5,
+            "accepted": 828,
+            "coverage": 0.9118942731277533,
+            "errorRate": 0.12560386473429952
+          },
+          {
+            "threshold": 0.7,
+            "accepted": 667,
+            "coverage": 0.7345814977973568,
+            "errorRate": 0.05997001499250375
+          },
+          {
+            "threshold": 0.8,
+            "accepted": 531,
+            "coverage": 0.5848017621145375,
+            "errorRate": 0.04331450094161959
+          },
+          {
+            "threshold": 0.9,
+            "accepted": 368,
+            "coverage": 0.4052863436123348,
+            "errorRate": 0.016304347826086956
+          },
+          {
+            "threshold": 0.95,
+            "accepted": 276,
+            "coverage": 0.3039647577092511,
+            "errorRate": 0.007246376811594203
+          },
+          {
+            "threshold": 0.99,
+            "accepted": 88,
+            "coverage": 0.09691629955947137,
+            "errorRate": 0.0
+          }
+        ],
+        "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here.",
+        "ordinalMeanAbsoluteError": 0.3190549633819242
+      },
+      "publicTransfer": {
+        "questions": 764,
+        "answered": 764,
+        "errors": 0,
+        "correct": 613,
+        "accuracyAllQuestions": 0.8023560209424084,
+        "brierAnswered": 0.2543006283406479,
+        "nllAnswered": 0.460382624472629,
+        "ece10Answered": 0.033847807241890064,
+        "confidentWrongAt09": 6,
+        "coverageByFixedThreshold": [
+          {
+            "threshold": 0.5,
+            "accepted": 691,
+            "coverage": 0.9044502617801047,
+            "errorRate": 0.15050651230101303
+          },
+          {
+            "threshold": 0.7,
+            "accepted": 542,
+            "coverage": 0.7094240837696335,
+            "errorRate": 0.07380073800738007
+          },
+          {
+            "threshold": 0.8,
+            "accepted": 468,
+            "coverage": 0.612565445026178,
+            "errorRate": 0.049145299145299144
+          },
+          {
+            "threshold": 0.9,
+            "accepted": 350,
+            "coverage": 0.4581151832460733,
+            "errorRate": 0.017142857142857144
+          },
+          {
+            "threshold": 0.95,
+            "accepted": 262,
+            "coverage": 0.34293193717277487,
+            "errorRate": 0.007633587786259542
+          },
+          {
+            "threshold": 0.99,
+            "accepted": 87,
+            "coverage": 0.11387434554973822,
+            "errorRate": 0.0
+          }
+        ],
+        "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here.",
+        "ordinalMeanAbsoluteError": 0.34230038267246843
+      },
+      "authoredRussian": {
+        "questions": 144,
+        "answered": 144,
+        "errors": 0,
+        "correct": 143,
+        "accuracyAllQuestions": 0.9930555555555556,
+        "brierAnswered": 0.10416501037063129,
+        "nllAnswered": 0.2628194880491901,
+        "ece10Answered": 0.21249311017124553,
+        "confidentWrongAt09": 0,
+        "coverageByFixedThreshold": [
+          {
+            "threshold": 0.5,
+            "accepted": 137,
+            "coverage": 0.9513888888888888,
+            "errorRate": 0.0
+          },
+          {
+            "threshold": 0.7,
+            "accepted": 125,
+            "coverage": 0.8680555555555556,
+            "errorRate": 0.0
+          },
+          {
+            "threshold": 0.8,
+            "accepted": 63,
+            "coverage": 0.4375,
+            "errorRate": 0.0
+          },
+          {
+            "threshold": 0.9,
+            "accepted": 18,
+            "coverage": 0.125,
+            "errorRate": 0.0
+          },
+          {
+            "threshold": 0.95,
+            "accepted": 14,
+            "coverage": 0.09722222222222222,
+            "errorRate": 0.0
+          },
+          {
+            "threshold": 0.99,
+            "accepted": 1,
+            "coverage": 0.006944444444444444,
+            "errorRate": 0.0
+          }
+        ],
+        "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here.",
+        "ordinalMeanAbsoluteError": 0.29968378063980394
+      },
+      "byType": {
+        "choice": {
+          "questions": 492,
+          "answered": 492,
+          "errors": 0,
+          "correct": 400,
+          "accuracyAllQuestions": 0.8130081300813008,
+          "brierAnswered": 0.24971593029461644,
+          "nllAnswered": 0.5001996781390384,
+          "ece10Answered": 0.05950644744126973,
+          "confidentWrongAt09": 2,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 421,
+              "coverage": 0.8556910569105691,
+              "errorRate": 0.11163895486935867
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 345,
+              "coverage": 0.7012195121951219,
+              "errorRate": 0.04927536231884058
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 276,
+              "coverage": 0.5609756097560976,
+              "errorRate": 0.036231884057971016
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 193,
+              "coverage": 0.39227642276422764,
+              "errorRate": 0.010362694300518135
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 144,
+              "coverage": 0.2926829268292683,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 36,
+              "coverage": 0.07317073170731707,
+              "errorRate": 0.0
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "noul": {
+          "questions": 328,
+          "answered": 328,
+          "errors": 0,
+          "correct": 284,
+          "accuracyAllQuestions": 0.8658536585365854,
+          "brierAnswered": 0.19400091681333753,
+          "nllAnswered": 0.3162898738046143,
+          "ece10Answered": 0.03553192036633847,
+          "confidentWrongAt09": 3,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 328,
+              "coverage": 1.0,
+              "errorRate": 0.13414634146341464
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 264,
+              "coverage": 0.8048780487804879,
+              "errorRate": 0.07196969696969698
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 216,
+              "coverage": 0.6585365853658537,
+              "errorRate": 0.05092592592592592
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 154,
+              "coverage": 0.4695121951219512,
+              "errorRate": 0.01948051948051948
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 119,
+              "coverage": 0.3628048780487805,
+              "errorRate": 0.01680672268907563
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 50,
+              "coverage": 0.1524390243902439,
+              "errorRate": 0.0
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "score": {
+          "questions": 88,
+          "answered": 88,
+          "errors": 0,
+          "correct": 72,
+          "accuracyAllQuestions": 0.8181818181818182,
+          "brierAnswered": 0.2590102627943176,
+          "nllAnswered": 0.451556944589222,
+          "ece10Answered": 0.08293436635062447,
+          "confidentWrongAt09": 1,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 79,
+              "coverage": 0.8977272727272727,
+              "errorRate": 0.16455696202531644
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 58,
+              "coverage": 0.6590909090909091,
+              "errorRate": 0.06896551724137931
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 39,
+              "coverage": 0.4431818181818182,
+              "errorRate": 0.05128205128205128
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 21,
+              "coverage": 0.23863636363636365,
+              "errorRate": 0.047619047619047616
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 13,
+              "coverage": 0.14772727272727273,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 2,
+              "coverage": 0.022727272727272728,
+              "errorRate": 0.0
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        }
+      },
+      "bySource": {
+        "authored-russian-typed": {
+          "questions": 144,
+          "answered": 144,
+          "errors": 0,
+          "correct": 143,
+          "accuracyAllQuestions": 0.9930555555555556,
+          "brierAnswered": 0.10416501037063129,
+          "nllAnswered": 0.2628194880491901,
+          "ece10Answered": 0.21249311017124553,
+          "confidentWrongAt09": 0,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 137,
+              "coverage": 0.9513888888888888,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 125,
+              "coverage": 0.8680555555555556,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 63,
+              "coverage": 0.4375,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 18,
+              "coverage": 0.125,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 14,
+              "coverage": 0.09722222222222222,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 1,
+              "coverage": 0.006944444444444444,
+              "errorRate": 0.0
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "composition_holdout": {
+          "questions": 96,
+          "answered": 96,
+          "errors": 0,
+          "correct": 94,
+          "accuracyAllQuestions": 0.9791666666666666,
+          "brierAnswered": 0.07265750882301934,
+          "nllAnswered": 0.14970972837197358,
+          "ece10Answered": 0.07865301631331481,
+          "confidentWrongAt09": 1,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 96,
+              "coverage": 1.0,
+              "errorRate": 0.020833333333333332
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 85,
+              "coverage": 0.8854166666666666,
+              "errorRate": 0.011764705882352941
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 80,
+              "coverage": 0.8333333333333334,
+              "errorRate": 0.0125
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 64,
+              "coverage": 0.6666666666666666,
+              "errorRate": 0.015625
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 52,
+              "coverage": 0.5416666666666666,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 13,
+              "coverage": 0.13541666666666666,
+              "errorRate": 0.0
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "emotion": {
+          "questions": 116,
+          "answered": 116,
+          "errors": 0,
+          "correct": 65,
+          "accuracyAllQuestions": 0.5603448275862069,
+          "brierAnswered": 0.5283768574785999,
+          "nllAnswered": 1.0464486013956598,
+          "ece10Answered": 0.10797638647123994,
+          "confidentWrongAt09": 0,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 89,
+              "coverage": 0.7672413793103449,
+              "errorRate": 0.33707865168539325
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 48,
+              "coverage": 0.41379310344827586,
+              "errorRate": 0.20833333333333334
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 34,
+              "coverage": 0.29310344827586204,
+              "errorRate": 0.17647058823529413
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 12,
+              "coverage": 0.10344827586206896,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 3,
+              "coverage": 0.02586206896551724,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 0,
+              "coverage": 0.0,
+              "errorRate": null
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "legacy_holdout": {
+          "questions": 80,
+          "answered": 80,
+          "errors": 0,
+          "correct": 65,
+          "accuracyAllQuestions": 0.8125,
+          "brierAnswered": 0.18524784583046267,
+          "nllAnswered": 0.28116834855200057,
+          "ece10Answered": 0.08460090352211151,
+          "confidentWrongAt09": 1,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 78,
+              "coverage": 0.975,
+              "errorRate": 0.16666666666666666
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 66,
+              "coverage": 0.825,
+              "errorRate": 0.06060606060606061
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 63,
+              "coverage": 0.7875,
+              "errorRate": 0.031746031746031744
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 58,
+              "coverage": 0.725,
+              "errorRate": 0.017241379310344827
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 53,
+              "coverage": 0.6625,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 39,
+              "coverage": 0.4875,
+              "errorRate": 0.0
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "mmlu": {
+          "questions": 116,
+          "answered": 116,
+          "errors": 0,
+          "correct": 79,
+          "accuracyAllQuestions": 0.6810344827586207,
+          "brierAnswered": 0.3964835619347099,
+          "nllAnswered": 0.740201823820986,
+          "ece10Answered": 0.06660618296076969,
+          "confidentWrongAt09": 1,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 74,
+              "coverage": 0.6379310344827587,
+              "errorRate": 0.17567567567567569
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 59,
+              "coverage": 0.5086206896551724,
+              "errorRate": 0.1016949152542373
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 44,
+              "coverage": 0.3793103448275862,
+              "errorRate": 0.06818181818181818
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 28,
+              "coverage": 0.2413793103448276,
+              "errorRate": 0.03571428571428571
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 15,
+              "coverage": 0.12931034482758622,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 1,
+              "coverage": 0.008620689655172414,
+              "errorRate": 0.0
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "paws": {
+          "questions": 80,
+          "answered": 80,
+          "errors": 0,
+          "correct": 64,
+          "accuracyAllQuestions": 0.8,
+          "brierAnswered": 0.30918811576472116,
+          "nllAnswered": 0.48629027291665167,
+          "ece10Answered": 0.0669704500818625,
+          "confidentWrongAt09": 2,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 80,
+              "coverage": 1.0,
+              "errorRate": 0.2
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 65,
+              "coverage": 0.8125,
+              "errorRate": 0.16923076923076924
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 55,
+              "coverage": 0.6875,
+              "errorRate": 0.12727272727272726
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 37,
+              "coverage": 0.4625,
+              "errorRate": 0.05405405405405406
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 23,
+              "coverage": 0.2875,
+              "errorRate": 0.08695652173913043
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 2,
+              "coverage": 0.025,
+              "errorRate": 0.0
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "qnli": {
+          "questions": 80,
+          "answered": 80,
+          "errors": 0,
+          "correct": 73,
+          "accuracyAllQuestions": 0.9125,
+          "brierAnswered": 0.14017388395851296,
+          "nllAnswered": 0.2368256396206597,
+          "ece10Answered": 0.028304750133247607,
+          "confidentWrongAt09": 1,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 80,
+              "coverage": 1.0,
+              "errorRate": 0.0875
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 70,
+              "coverage": 0.875,
+              "errorRate": 0.05714285714285714
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 63,
+              "coverage": 0.7875,
+              "errorRate": 0.031746031746031744
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 50,
+              "coverage": 0.625,
+              "errorRate": 0.02
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 38,
+              "coverage": 0.475,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 10,
+              "coverage": 0.125,
+              "errorRate": 0.0
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "sciq": {
+          "questions": 116,
+          "answered": 116,
+          "errors": 0,
+          "correct": 114,
+          "accuracyAllQuestions": 0.9827586206896551,
+          "brierAnswered": 0.04432013428162752,
+          "nllAnswered": 0.11124410753498573,
+          "ece10Answered": 0.07043185982245576,
+          "confidentWrongAt09": 0,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 114,
+              "coverage": 0.9827586206896551,
+              "errorRate": 0.017543859649122806
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 106,
+              "coverage": 0.9137931034482759,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 98,
+              "coverage": 0.8448275862068966,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 89,
+              "coverage": 0.7672413793103449,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 74,
+              "coverage": 0.6379310344827587,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 22,
+              "coverage": 0.1896551724137931,
+              "errorRate": 0.0
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "tweet_offensive": {
+          "questions": 80,
+          "answered": 80,
+          "errors": 0,
+          "correct": 59,
+          "accuracyAllQuestions": 0.7375,
+          "brierAnswered": 0.3014603416542088,
+          "nllAnswered": 0.4607710560880617,
+          "ece10Answered": 0.0959448419045657,
+          "confidentWrongAt09": 0,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 80,
+              "coverage": 1.0,
+              "errorRate": 0.2625
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 43,
+              "coverage": 0.5375,
+              "errorRate": 0.09302325581395349
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 31,
+              "coverage": 0.3875,
+              "errorRate": 0.06451612903225806
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 12,
+              "coverage": 0.15,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 4,
+              "coverage": 0.05,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 0,
+              "coverage": 0.0,
+              "errorRate": null
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        }
+      }
+    },
+    "Jev": {
+      "all": {
+        "questions": 908,
+        "answered": 908,
+        "errors": 0,
+        "correct": 790,
+        "accuracyAllQuestions": 0.8700440528634361,
+        "brierAnswered": 0.18933414586842034,
+        "nllAnswered": 0.8838910343827637,
+        "ece10Answered": 0.04661137809816233,
+        "confidentWrongAt09": 36,
+        "coverageByFixedThreshold": [
+          {
+            "threshold": 0.5,
+            "accepted": 900,
+            "coverage": 0.9911894273127754,
+            "errorRate": 0.12444444444444444
+          },
+          {
+            "threshold": 0.7,
+            "accepted": 807,
+            "coverage": 0.8887665198237885,
+            "errorRate": 0.08178438661710037
+          },
+          {
+            "threshold": 0.8,
+            "accepted": 757,
+            "coverage": 0.8337004405286343,
+            "errorRate": 0.06340819022457067
+          },
+          {
+            "threshold": 0.9,
+            "accepted": 695,
+            "coverage": 0.7654185022026432,
+            "errorRate": 0.051798561151079135
+          },
+          {
+            "threshold": 0.95,
+            "accepted": 629,
+            "coverage": 0.6927312775330396,
+            "errorRate": 0.04292527821939587
+          },
+          {
+            "threshold": 0.99,
+            "accepted": 443,
+            "coverage": 0.4878854625550661,
+            "errorRate": 0.040632054176072234
+          }
+        ],
+        "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here.",
+        "ordinalMeanAbsoluteError": 0.0325
+      },
+      "publicTransfer": {
+        "questions": 764,
+        "answered": 764,
+        "errors": 0,
+        "correct": 646,
+        "accuracyAllQuestions": 0.8455497382198953,
+        "brierAnswered": 0.22499791158183988,
+        "nllAnswered": 1.049527189121179,
+        "ece10Answered": 0.056352266116663954,
+        "confidentWrongAt09": 36,
+        "coverageByFixedThreshold": [
+          {
+            "threshold": 0.5,
+            "accepted": 756,
+            "coverage": 0.9895287958115183,
+            "errorRate": 0.14814814814814814
+          },
+          {
+            "threshold": 0.7,
+            "accepted": 663,
+            "coverage": 0.8678010471204188,
+            "errorRate": 0.09954751131221719
+          },
+          {
+            "threshold": 0.8,
+            "accepted": 613,
+            "coverage": 0.8023560209424084,
+            "errorRate": 0.07830342577487764
+          },
+          {
+            "threshold": 0.9,
+            "accepted": 551,
+            "coverage": 0.7212041884816754,
+            "errorRate": 0.06533575317604355
+          },
+          {
+            "threshold": 0.95,
+            "accepted": 485,
+            "coverage": 0.6348167539267016,
+            "errorRate": 0.05567010309278351
+          },
+          {
+            "threshold": 0.99,
+            "accepted": 305,
+            "coverage": 0.3992146596858639,
+            "errorRate": 0.05901639344262295
+          }
+        ],
+        "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here.",
+        "ordinalMeanAbsoluteError": 0.07075000000000001
+      },
+      "authoredRussian": {
+        "questions": 144,
+        "answered": 144,
+        "errors": 0,
+        "correct": 144,
+        "accuracyAllQuestions": 1.0,
+        "brierAnswered": 0.00011805555555555571,
+        "nllAnswered": 0.005099213409504898,
+        "ece10Answered": 0.005069444444444349,
+        "confidentWrongAt09": 0,
+        "coverageByFixedThreshold": [
+          {
+            "threshold": 0.5,
+            "accepted": 144,
+            "coverage": 1.0,
+            "errorRate": 0.0
+          },
+          {
+            "threshold": 0.7,
+            "accepted": 144,
+            "coverage": 1.0,
+            "errorRate": 0.0
+          },
+          {
+            "threshold": 0.8,
+            "accepted": 144,
+            "coverage": 1.0,
+            "errorRate": 0.0
+          },
+          {
+            "threshold": 0.9,
+            "accepted": 144,
+            "coverage": 1.0,
+            "errorRate": 0.0
+          },
+          {
+            "threshold": 0.95,
+            "accepted": 144,
+            "coverage": 1.0,
+            "errorRate": 0.0
+          },
+          {
+            "threshold": 0.99,
+            "accepted": 138,
+            "coverage": 0.9583333333333334,
+            "errorRate": 0.0
+          }
+        ],
+        "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here.",
+        "ordinalMeanAbsoluteError": 0.0006250000000000006
+      },
+      "byType": {
+        "choice": {
+          "questions": 492,
+          "answered": 492,
+          "errors": 0,
+          "correct": 414,
+          "accuracyAllQuestions": 0.8414634146341463,
+          "brierAnswered": 0.2359069196108245,
+          "nllAnswered": 1.4490444419682396,
+          "ece10Answered": 0.08126652705921,
+          "confidentWrongAt09": 28,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 484,
+              "coverage": 0.983739837398374,
+              "errorRate": 0.1487603305785124
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 437,
+              "coverage": 0.8882113821138211,
+              "errorRate": 0.10526315789473684
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 411,
+              "coverage": 0.8353658536585366,
+              "errorRate": 0.0827250608272506
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 384,
+              "coverage": 0.7804878048780488,
+              "errorRate": 0.07291666666666667
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 362,
+              "coverage": 0.7357723577235772,
+              "errorRate": 0.06906077348066299
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 320,
+              "coverage": 0.6504065040650406,
+              "errorRate": 0.05625
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "noul": {
+          "questions": 328,
+          "answered": 328,
+          "errors": 0,
+          "correct": 289,
+          "accuracyAllQuestions": 0.8810975609756098,
+          "brierAnswered": 0.16377439024390245,
+          "nllAnswered": 0.26158678411952796,
+          "ece10Answered": 0.015304878048780484,
+          "confidentWrongAt09": 8,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 328,
+              "coverage": 1.0,
+              "errorRate": 0.11890243902439024
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 285,
+              "coverage": 0.8689024390243902,
+              "errorRate": 0.06666666666666667
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 262,
+              "coverage": 0.7987804878048781,
+              "errorRate": 0.05343511450381679
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 229,
+              "coverage": 0.698170731707317,
+              "errorRate": 0.034934497816593885
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 186,
+              "coverage": 0.5670731707317073,
+              "errorRate": 0.010752688172043012
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 55,
+              "coverage": 0.1676829268292683,
+              "errorRate": 0.0
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "score": {
+          "questions": 88,
+          "answered": 88,
+          "errors": 0,
+          "correct": 87,
+          "accuracyAllQuestions": 0.9886363636363636,
+          "brierAnswered": 0.02421818181818182,
+          "nllAnswered": 0.043667370226935225,
+          "ece10Answered": 0.03250000000000011,
+          "confidentWrongAt09": 0,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 88,
+              "coverage": 1.0,
+              "errorRate": 0.011363636363636364
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 85,
+              "coverage": 0.9659090909090909,
+              "errorRate": 0.011764705882352941
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 84,
+              "coverage": 0.9545454545454546,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 82,
+              "coverage": 0.9318181818181818,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 81,
+              "coverage": 0.9204545454545454,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 68,
+              "coverage": 0.7727272727272727,
+              "errorRate": 0.0
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        }
+      },
+      "bySource": {
+        "authored-russian-typed": {
+          "questions": 144,
+          "answered": 144,
+          "errors": 0,
+          "correct": 144,
+          "accuracyAllQuestions": 1.0,
+          "brierAnswered": 0.00011805555555555571,
+          "nllAnswered": 0.005099213409504898,
+          "ece10Answered": 0.005069444444444349,
+          "confidentWrongAt09": 0,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 144,
+              "coverage": 1.0,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 144,
+              "coverage": 1.0,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 144,
+              "coverage": 1.0,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 144,
+              "coverage": 1.0,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 144,
+              "coverage": 1.0,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 138,
+              "coverage": 0.9583333333333334,
+              "errorRate": 0.0
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "composition_holdout": {
+          "questions": 96,
+          "answered": 96,
+          "errors": 0,
+          "correct": 86,
+          "accuracyAllQuestions": 0.8958333333333334,
+          "brierAnswered": 0.11480833333333335,
+          "nllAnswered": 0.16559070638097498,
+          "ece10Answered": 0.041458333333333354,
+          "confidentWrongAt09": 1,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 96,
+              "coverage": 1.0,
+              "errorRate": 0.10416666666666667
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 81,
+              "coverage": 0.84375,
+              "errorRate": 0.012345679012345678
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 80,
+              "coverage": 0.8333333333333334,
+              "errorRate": 0.0125
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 77,
+              "coverage": 0.8020833333333334,
+              "errorRate": 0.012987012987012988
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 73,
+              "coverage": 0.7604166666666666,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 65,
+              "coverage": 0.6770833333333334,
+              "errorRate": 0.0
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "emotion": {
+          "questions": 116,
+          "answered": 116,
+          "errors": 0,
+          "correct": 70,
+          "accuracyAllQuestions": 0.603448275862069,
+          "brierAnswered": 0.5788285340341767,
+          "nllAnswered": 3.146503884340211,
+          "ece10Answered": 0.23599616858237546,
+          "confidentWrongAt09": 14,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 110,
+              "coverage": 0.9482758620689655,
+              "errorRate": 0.37272727272727274
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 91,
+              "coverage": 0.7844827586206896,
+              "errorRate": 0.31868131868131866
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 75,
+              "coverage": 0.646551724137931,
+              "errorRate": 0.25333333333333335
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 59,
+              "coverage": 0.5086206896551724,
+              "errorRate": 0.23728813559322035
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 52,
+              "coverage": 0.4482758620689655,
+              "errorRate": 0.25
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 39,
+              "coverage": 0.33620689655172414,
+              "errorRate": 0.1794871794871795
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "legacy_holdout": {
+          "questions": 80,
+          "answered": 80,
+          "errors": 0,
+          "correct": 79,
+          "accuracyAllQuestions": 0.9875,
+          "brierAnswered": 0.02695,
+          "nllAnswered": 0.05636262223757969,
+          "ece10Answered": 0.043999999999999984,
+          "confidentWrongAt09": 0,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 80,
+              "coverage": 1.0,
+              "errorRate": 0.0125
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 77,
+              "coverage": 0.9625,
+              "errorRate": 0.012987012987012988
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 76,
+              "coverage": 0.95,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 74,
+              "coverage": 0.925,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 73,
+              "coverage": 0.9125,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 31,
+              "coverage": 0.3875,
+              "errorRate": 0.0
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "mmlu": {
+          "questions": 116,
+          "answered": 116,
+          "errors": 0,
+          "correct": 97,
+          "accuracyAllQuestions": 0.8362068965517241,
+          "brierAnswered": 0.28328529741863073,
+          "nllAnswered": 2.795124001333949,
+          "ece10Answered": 0.12087251828631135,
+          "confidentWrongAt09": 13,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 114,
+              "coverage": 0.9827586206896551,
+              "errorRate": 0.15789473684210525
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 105,
+              "coverage": 0.9051724137931034,
+              "errorRate": 0.13333333333333333
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 99,
+              "coverage": 0.853448275862069,
+              "errorRate": 0.13131313131313133
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 93,
+              "coverage": 0.8017241379310345,
+              "errorRate": 0.13978494623655913
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 82,
+              "coverage": 0.7068965517241379,
+              "errorRate": 0.14634146341463414
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 67,
+              "coverage": 0.5775862068965517,
+              "errorRate": 0.16417910447761194
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "paws": {
+          "questions": 80,
+          "answered": 80,
+          "errors": 0,
+          "correct": 63,
+          "accuracyAllQuestions": 0.7875,
+          "brierAnswered": 0.3104425,
+          "nllAnswered": 0.4745888407794543,
+          "ece10Answered": 0.0953749999999999,
+          "confidentWrongAt09": 6,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 80,
+              "coverage": 1.0,
+              "errorRate": 0.2125
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 70,
+              "coverage": 0.875,
+              "errorRate": 0.17142857142857143
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 67,
+              "coverage": 0.8375,
+              "errorRate": 0.16417910447761194
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 56,
+              "coverage": 0.7,
+              "errorRate": 0.10714285714285714
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 39,
+              "coverage": 0.4875,
+              "errorRate": 0.05128205128205128
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 0,
+              "coverage": 0.0,
+              "errorRate": null
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "qnli": {
+          "questions": 80,
+          "answered": 80,
+          "errors": 0,
+          "correct": 73,
+          "accuracyAllQuestions": 0.9125,
+          "brierAnswered": 0.094585,
+          "nllAnswered": 0.1699941228795627,
+          "ece10Answered": 0.08575000000000002,
+          "confidentWrongAt09": 0,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 80,
+              "coverage": 1.0,
+              "errorRate": 0.0875
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 71,
+              "coverage": 0.8875,
+              "errorRate": 0.014084507042253521
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 63,
+              "coverage": 0.7875,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 55,
+              "coverage": 0.6875,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 42,
+              "coverage": 0.525,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 1,
+              "coverage": 0.0125,
+              "errorRate": 0.0
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "sciq": {
+          "questions": 116,
+          "answered": 116,
+          "errors": 0,
+          "correct": 113,
+          "accuracyAllQuestions": 0.9741379310344828,
+          "brierAnswered": 0.04341551724137931,
+          "nllAnswered": 0.0658923924477742,
+          "ece10Answered": 0.01767241379310347,
+          "confidentWrongAt09": 0,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 116,
+              "coverage": 1.0,
+              "errorRate": 0.02586206896551724
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 112,
+              "coverage": 0.9655172413793104,
+              "errorRate": 0.017857142857142856
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 109,
+              "coverage": 0.9396551724137931,
+              "errorRate": 0.009174311926605505
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 107,
+              "coverage": 0.9224137931034483,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 107,
+              "coverage": 0.9224137931034483,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 101,
+              "coverage": 0.8706896551724138,
+              "errorRate": 0.0
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        },
+        "tweet_offensive": {
+          "questions": 80,
+          "answered": 80,
+          "errors": 0,
+          "correct": 65,
+          "accuracyAllQuestions": 0.8125,
+          "brierAnswered": 0.265965,
+          "nllAnswered": 0.4124258192766881,
+          "ece10Answered": 0.02999999999999997,
+          "confidentWrongAt09": 2,
+          "coverageByFixedThreshold": [
+            {
+              "threshold": 0.5,
+              "accepted": 80,
+              "coverage": 1.0,
+              "errorRate": 0.1875
+            },
+            {
+              "threshold": 0.7,
+              "accepted": 56,
+              "coverage": 0.7,
+              "errorRate": 0.10714285714285714
+            },
+            {
+              "threshold": 0.8,
+              "accepted": 44,
+              "coverage": 0.55,
+              "errorRate": 0.06818181818181818
+            },
+            {
+              "threshold": 0.9,
+              "accepted": 30,
+              "coverage": 0.375,
+              "errorRate": 0.06666666666666667
+            },
+            {
+              "threshold": 0.95,
+              "accepted": 17,
+              "coverage": 0.2125,
+              "errorRate": 0.0
+            },
+            {
+              "threshold": 0.99,
+              "accepted": 1,
+              "coverage": 0.0125,
+              "errorRate": 0.0
+            }
+          ],
+          "coverageInterpretation": "Observed on this dataset; not a future error guarantee. Thresholds not tuned here."
+        }
+      }
+    }
+  },
+  "pairedOutcomes": {
+    "Fev vs Kev": {
+      "aOnlyCorrect": 63,
+      "bOnlyCorrect": 36,
+      "bothCorrect": 720,
+      "neitherCorrect": 89
+    },
+    "Fev vs Jev": {
+      "aOnlyCorrect": 28,
+      "bOnlyCorrect": 35,
+      "bothCorrect": 755,
+      "neitherCorrect": 90
+    },
+    "Kev vs Jev": {
+      "aOnlyCorrect": 35,
+      "bOnlyCorrect": 69,
+      "bothCorrect": 721,
+      "neitherCorrect": 83
+    }
+  },
+  "interpretation": "Descriptive comparison on fixed public development and repetitive authored inputs; no significance or unseen customer accuracy claim",
+  "datasetSha256": "9266d6ea1ce83c9755a60cf48c7469b0fa3264c229e96f4142d683bada8fef91",
+  "provenance": {
+    "Fev": {
+      "revision": "3ef077cd7cc3c97d696c18150358ab4de3a6884e",
+      "codeZipSha256": "b3b7808d7c2cbe2ce26d4b31ee0dde2b3e894c6776537931b61cd173ef526f8e",
+      "execution": "reference BF16 backbone, FP32 shared adapter unmerged",
+      "dataSha256": "9266d6ea1ce83c9755a60cf48c7469b0fa3264c229e96f4142d683bada8fef91",
+      "gpu": "NVIDIA A10G",
+      "torch": "2.14.0+cu130",
+      "questionIsolation": false
+    },
+    "Kev": {
+      "revision": "6cfce5c2fa4b4bd64026336ab649c5ca78857d52",
+      "codeRevision": "2074cc44256200bb37540103fa4572901faa10f3",
+      "dataSha256": "9266d6ea1ce83c9755a60cf48c7469b0fa3264c229e96f4142d683bada8fef91",
+      "precision": "BF16 merged, official eager SDPA; no graphs/fused",
+      "gpu": "NVIDIA A10G",
+      "torch": "2.8.0+cu128",
+      "temperature": 2.406050072164233
+    },
+    "Jev": {
+      "model": "jev-1.14.0",
+      "endpoint": "https://api.typesafe.ai/v1/systemone",
+      "records": 812,
+      "datasetSha256": "9266d6ea1ce83c9755a60cf48c7469b0fa3264c229e96f4142d683bada8fef91",
+      "estimatedCapUsd": 0.15,
+      "conservativeByteTokenUpperEstimateUsd": 0.018575508,
+      "priceUsdPerMillionInputTokens": 0.042,
+      "noAutomaticRetries": true,
+      "publicAuthoredInputsOnly": true
+    }
+  }
+}

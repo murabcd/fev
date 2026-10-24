@@ -10,3 +10,5 @@ adapter/
 *.pt
 *.bin
 .DS_Store
+work/
+cloud-inputs/

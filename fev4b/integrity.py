@@ -15,7 +15,7 @@ def file_sha256(path):
 def verify_package(directory):
     root = Path(directory).resolve()
     manifest = json.loads((root / 'manifest.json').read_text())
-    if manifest['model'] != 'Fev-4B' or manifest['version'] not in ('0.1.0', '0.2.0'):
+    if manifest['model'] != 'Fev-4B' or manifest['version'] not in ('0.1.0', '0.2.0', '0.2.1'):
         raise ValueError('Unsupported package manifest')
     files = manifest.get('files')
     if not isinstance(files, dict) or not files:

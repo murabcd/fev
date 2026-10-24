@@ -20,7 +20,7 @@ Fev-4B is a decision model for classification, routing, triage and checks agains
 
 Built on the Qwen3.5-4B architecture, Fev combines a native decision readout with a shared LoRA adapter. Categories, business rules, examples and conversation history are supplied at runtime: customer-specific retraining is not required to change them. The package also includes a two-stage conversation router that can return a clarification signal when no route is sufficiently supported. Reference execution uses one 24 GB NVIDIA GPU.
 
-This card describes Fev-4B v0.2.0.
+This card describes the unpublished Fev-4B v0.2.1 candidate. The released checkpoint remains available under v0.2.0.
 
 ## Model details
 
@@ -37,7 +37,7 @@ This card describes Fev-4B v0.2.0.
 | Languages | Russian |
 | Reference hardware | NVIDIA A10G, 24 GB; CUDA BF16 |
 | License | Apache-2.0; bundled notices retained |
-| Version | Fev v0.2.0; [versioned package](https://huggingface.co/murabcd/fev-4b/tree/v0.2.0) |
+| Version | Fev v0.2.1 candidate; released baseline [v0.2.0](https://huggingface.co/murabcd/fev-4b/tree/v0.2.0) |
 
 **Input.** Text, a JSON object or an array as the state, plus 1–64 named questions:
 
@@ -108,11 +108,21 @@ For the conversation-routing policy, use `Fev4B.route(...)` or `run.py --input e
 
 ## Training and release procedure
 
-This release distributes a complete decision checkpoint, one shared adapter and inference code. The shared adapter comes from customer-agnostic synthetic decision research. No customer-specific adapter is selected at runtime, and no training was performed for the v0.2.0 interface release.
+This release distributes a complete decision checkpoint, one shared adapter and inference code. The shared adapter comes from customer-agnostic synthetic decision research. No customer-specific adapter is selected at runtime. The original checkpoint and shared adapter remain the baseline; new training tools produce explicit research overlays rather than overwriting them. See [the training guide](TRAINING.md) and the installable `fev-finetune` skill for native decision cross-entropy, grouped data splits and separate temperature calibration. A toy smoke run verifies mechanics; it is not a new accuracy claim or an adopted checkpoint.
 
 Checkpoint and adapter files retain their original precision and hashes. Exact ancestry, adapter hashes and changed-file boundaries are recorded in [provenance.json](provenance.json) and [CHANGES.md](CHANGES.md). This is an inference release, not a complete reproduction of historical training data or an independent audit of all upstream sources.
 
 ## Evaluation
+
+The new common native typed-decision comparison against pinned Kev-4B and Jev is documented in [BENCHMARKS.md](BENCHMARKS.md), with separate public-development and authored-Russian denominators, probability metrics and reproducibility commands. It is distinct from the routing-composition evidence below.
+
+| Native comparison | Fev-4B | Kev-4B | Jev-1.14.0 |
+|---|---:|---:|---:|
+| Public development, 764 questions | 83.6% | 80.2% | 84.6% |
+| Authored Russian, 144 questions | 100.0% | 99.3% | 100.0% |
+
+All three systems received the same inputs, with zero failed responses. Open-model measurements use their BF16 serving paths; Jev uses its pinned hosted API. The public suite is already published development data, and Russian probes repeat templates. These are engineering comparisons, not unseen-customer accuracy. No comparison inputs were used by the new trainer.
+
 
 The conversation-routing composition was measured on **303 development cases** with the full supplied business rules. Cases include synthetic and source-derived examples already consumed during development; this is not a fresh, independently human-labelled test set.
 
@@ -141,6 +151,9 @@ These results measure the routing composition. They do not establish general typ
 **Release verification.** The complete package passed a CUDA A10G smoke check through the real TypeSafe Python SDK. Mixed Choice/Noul/Score requests used one backbone forward and generated zero tokens; plain JSON and zstd produced identical answers. Routing before and after typed calls passed the strict same-job comparison. Historical probability differences are reported separately. All 303 saved routing decisions also replayed unchanged locally. See [API verification](evaluation/api-verification.json). This is interface and packaging evidence, not a new accuracy benchmark.
 
 ## Compute and serving
+
+Reference execution remains the default. `--execution compiled` enables an optional layer-compiled CUDA path on the same weights. The completed 303-case regression preserved all final routing decisions, with a 31.1% warm median speed improvement on three measured workloads and a 0.9% allocated-memory increase. Internal shortlists and probability values can differ. Compilation time, throughput, production cost and general-workload parity are not established by that result. See [BENCHMARKS.md](BENCHMARKS.md).
+
 
 The sequential 303-case run on one A10G had a median model time of 613 ms and p95 of 2,442 ms, excluding download, model loading, network and queueing. The first case took 50.6 seconds including cold kernel initialization. Peak allocated GPU memory was 10.01 GB and reserved memory was 10.45 GB (decimal units).
 
