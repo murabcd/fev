@@ -167,4 +167,4 @@ The reference server serializes requests. Concurrent throughput, production cost
 
 ## License and reproducibility
 
-Apache-2.0. Preserve [LICENSE](https://huggingface.co/murabcd/fev-4b/blob/main/LICENSE), [NOTICE](https://huggingface.co/murabcd/fev-4b/blob/main/NOTICE) and bundled upstream notices. [manifest.json](https://huggingface.co/murabcd/fev-4b/blob/main/manifest.json) records package hashes. Pin the `v0.2.0` tag or its commit when downloading. Weights are hosted on Hugging Face; source and usage examples are maintained on [GitHub](https://github.com/murabcd/fev).
+Apache-2.0. Preserve [LICENSE](https://huggingface.co/murabcd/fev-4b/blob/main/LICENSE), [NOTICE](https://huggingface.co/murabcd/fev-4b/blob/main/NOTICE) and bundled upstream notices. [manifest.json](https://huggingface.co/murabcd/fev-4b/blob/main/manifest.json) records package hashes. Pin a release tag or its commit when downloading. Weights are hosted on Hugging Face; source and usage examples are maintained on [GitHub](https://github.com/murabcd/fev).
