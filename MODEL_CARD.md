@@ -20,7 +20,7 @@ Fev-4B is a decision model for classification, routing, triage and checks agains
 
 Built on the Qwen3.5-4B architecture, Fev combines a native decision readout with a shared LoRA adapter. Categories, business rules, examples and conversation history are supplied at runtime: customer-specific retraining is not required to change them. The package also includes a two-stage conversation router that can return a clarification signal when no route is sufficiently supported. Reference execution uses one 24 GB NVIDIA GPU.
 
-This card describes Fev v0.2.0. The weights and routing policy are unchanged from v0.1.0; this version adds the public typed-decision interface and HTTP server.
+This card describes Fev-4B v0.2.0.
 
 ## Model details
 
