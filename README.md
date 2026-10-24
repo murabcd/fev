@@ -9,14 +9,14 @@ A small decision model you can configure, train and run on your own server.
   <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/LICENSE-Apache--2.0-0a0a0a.svg?style=for-the-badge&amp;labelColor=000000" height="28"></a>
 </p>
 
-Fev-4B is a customer-agnostic decision model by [Murad](https://github.com/murabcd), built on the Qwen3.5-4B architecture with a native decision readout and a shared LoRA adapter. Supply a state, questions and answer options; Fev returns probabilities without generating text. Its text API supports the TypeSafe SDK through a custom base URL.
+Fev-4B is a decision model built on the Qwen3.5-4B architecture with a native decision readout and a shared LoRA adapter. Supply a state, questions and answer options; Fev returns probabilities without generating text. Its text API supports the TypeSafe SDK through a custom base URL.
 
 [Models](#models) · [Quick Start](#quick-start) · [Fine-Tuning](#fine-tuning) · [Agent Skills](#agent-skills) · [Benchmarks](#benchmarks) · [Serving Performance](#serving-performance)
 
 ## Highlights
 
 - Named choices, yes/no checks and ordered scores in one request.
-- Categories, business rules, examples and conversation history supplied at runtime; no per-customer adapter required.
+- Categories, business rules, examples and conversation history supplied at runtime; no adapter training required.
 - Text-only `POST /v1/systemone`, real TypeSafe SDK support, optional bearer authentication and zstd requests.
 - One resident 4B model, with reference execution by default and an optional compiled CUDA path.
 - Shared-adapter training, grouped data splitting, separate temperature calibration and evaluation tools.
@@ -40,7 +40,7 @@ The context limit is an execution bound, not a measured long-document accuracy g
 
 Public development: 764 questions. Authored Russian probes: 144 questions. Combined: 908 questions. Brier is measured on the public split; lower is better.
 
-Same 812 requests, zero failed responses. Open models use their BF16 serving paths on the same GPU class; Jev uses its pinned hosted API. This is not Kev's published FP32 evaluation. The public suite is already published development data; Russian probes repeat authored templates. Results are engineering comparisons, not customer accuracy or production resolution. No comparison inputs entered the new trainer. [Methods, revisions and raw results](BENCHMARKS.md).
+Same 812 requests, zero failed responses. Open models use their BF16 serving paths on the same GPU class; Jev uses its pinned hosted API. This is not Kev's published FP32 evaluation. The public suite is already published development data; Russian probes repeat authored templates. Results are engineering comparisons, not unseen-workload accuracy or production resolution. No comparison inputs entered the new trainer. [Methods, revisions and raw results](BENCHMARKS.md).
 
 ## Quick Start
 
@@ -73,10 +73,10 @@ client = TypeSafeClient(
     model="fev-4b", timeout=120,
 )
 response = client.system_one(
-    state="Мне дважды списали оплату. Верните лишнее списание.",
+    state="I was charged twice. Please refund the duplicate payment.",
     questions={
-        "team": Choice(criteria={"billing": "Оплата и возврат", "delivery": "Доставка"}),
-        "refund": Noul(instructions="Клиент просит вернуть деньги?"),
+        "team": Choice(criteria={"billing": "Payments and refunds", "delivery": "Shipping and tracking"}),
+        "refund": Noul(instructions="Does the message request a refund?"),
     },
 )
 print(response.choices["team"].choice, response.nouls["refund"].noul)
@@ -92,7 +92,7 @@ Questions share one sequence and can attend to each other. Oversized requests ar
 
 ## Fine-Tuning
 
-Use runtime configuration to change categories and rules. For a demonstrated weakness across domains, continue the existing shared rank-8 adapter with native decision cross-entropy. The backbone and readout stay frozen; new weights are written to an explicit overlay. This is a shared-model research workflow, not a requirement for onboarding a customer.
+Use runtime configuration to change categories and rules. For a demonstrated weakness across domains, continue the existing shared rank-8 adapter with native decision cross-entropy. The backbone and readout stay frozen; new weights are written to an explicit overlay. This is a shared-model research workflow; changing runtime configuration does not require training.
 
 ### With a Coding Agent
 
@@ -162,12 +162,14 @@ Inputs, model revisions and source hashes are frozen in the [benchmark documenta
 
 Measured on the same A10G, three selected routing workloads with five warm repeats each:
 
-| Execution | Warm median | Warm p95 | Peak allocated GPU memory |
-|---|---:|---:|---:|
-| Reference | 2,451.97 ms | 2,539.22 ms | 9.997 GB |
-| Compiled | 1,690.33 ms | 1,733.43 ms | 10.086 GB |
+| Execution | Warm median | Warm p95 | Peak allocated VRAM | Est. $/1K routes* |
+|---|---:|---:|---:|---:|
+| Reference | 2,451.97 ms | 2,539.22 ms | 9.997 GB | $0.68 |
+| Compiled | 1,690.33 ms | 1,733.43 ms | 10.086 GB | $0.47 |
 
-Compiled execution reduced warm median time by **31.1%**, with **0.9% more allocated memory**, while preserving **303/303 final routing decisions**. Internal candidate sets changed on 33 cases; probabilities are not numerically identical. Loading, compilation, HTTP, queueing and concurrent throughput are excluded. This is not a production cost estimate. [Runtime evidence](evaluation/benchmarks/runtime.json).
+Compiled execution reduced warm median time by **31.1%**, with **0.9% more allocated memory**, while preserving **303/303 final routing decisions**. Internal candidate sets changed on 33 cases; probabilities are not numerically identical. Loading, compilation, HTTP, queueing and concurrent throughput are excluded. [Runtime evidence](evaluation/benchmarks/runtime.json).
+
+\*Estimated active GPU cost at an illustrative [A10G rate of $1.00/hour](https://huggingface.co/docs/hub/jobs-pricing), checked 2026-10-24: `median_seconds × 1,000 × hourly_rate / 3,600`. This extrapolates the warm median from 15 samples per mode; it is not measured throughput or a monthly hosting quote. Idle time, startup, compilation, HTTP/queueing and additional service charges are excluded.
 
 Reference remains the default. CUDA graphs, FP8, pruning and prefetching are disabled in the optional compiled path.
 
@@ -179,14 +181,14 @@ uv pip install -r requirements-test.txt
 .venv/bin/python -m unittest discover -s tests -v
 ```
 
-Contract tests cover routing composition, validation, training-data safeguards, metrics and real TypeSafe SDK requests against a fake model. They need no GPU, weights or customer records. Learned-model measurements are separate.
+Contract tests cover routing composition, validation, training-data safeguards, metrics and real TypeSafe SDK requests against a fake model. They need no GPU, weights or private records. Learned-model measurements are separate.
 
 ## Limitations
 
 Fev scores supplied options and evidence; it does not generate explanations, retrieve missing facts or execute business actions. Ambiguous definitions and missing history can cause mistakes or clarification. Top-option probabilities and routing cutoffs are not correctness guarantees. CPU, Apple Silicon, quantization, concurrent capacity and new-workload calibration remain unqualified.
 
-## Author and License
+## License
 
-Developed by [Murad](https://github.com/murabcd). Weights and the [model card](https://huggingface.co/murabcd/fev-4b) are on Hugging Face; code, training tools and skills are here. [Release history](CHANGES.md) · [Exact ancestry and hashes](provenance.json).
+Weights and the [model card](https://huggingface.co/murabcd/fev-4b) are on Hugging Face; code, training tools and skills are here. [Release history](CHANGES.md) · [Exact ancestry and hashes](provenance.json).
 
 Apache-2.0. Preserve [LICENSE](LICENSE), [NOTICE](NOTICE) and bundled notices. Report issues through this repository's Issues tab.
