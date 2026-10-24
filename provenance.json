@@ -39,7 +39,7 @@
   "upstreamManifestNote": "Upstream README hash was stale; execution artifacts all verified. Package manifest records the actual included README hash.",
   "weightsUnchangedSinceVersion": "0.1.0",
   "sourceRepository": "https://github.com/murabcd/fev",
-  "releaseStatus": "unpublished candidate",
+  "releaseStatus": "released",
   "executionModes": {
     "default": "reference",
     "optional": "compiled",

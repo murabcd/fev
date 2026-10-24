@@ -20,8 +20,6 @@ Fev-4B is a decision model for classification, routing, triage and checks agains
 
 Built on the Qwen3.5-4B architecture, Fev combines a native decision readout with a shared LoRA adapter. Categories, business rules, examples and conversation history are supplied at runtime: customer-specific retraining is not required to change them. The package also includes a two-stage conversation router that can return a clarification signal when no route is sufficiently supported. Reference execution uses one 24 GB NVIDIA GPU.
 
-This card describes the unpublished Fev-4B v0.2.1 candidate. The released checkpoint remains available under v0.2.0.
-
 ## Model details
 
 | | |
@@ -37,7 +35,7 @@ This card describes the unpublished Fev-4B v0.2.1 candidate. The released checkp
 | Languages | Russian |
 | Reference hardware | NVIDIA A10G, 24 GB; CUDA BF16 |
 | License | Apache-2.0; bundled notices retained |
-| Version | Fev v0.2.1 candidate; released baseline [v0.2.0](https://huggingface.co/murabcd/fev-4b/tree/v0.2.0) |
+| Version | Fev v0.2.1 |
 
 **Input.** Text, a JSON object or an array as the state, plus 1–64 named questions:
 
@@ -72,7 +70,7 @@ Download the complete versioned model package. On a Linux server with a compatib
 
 ```bash
 uvx --from huggingface-hub==1.31.0 hf download murabcd/fev-4b \
-  --revision v0.2.0 --local-dir fev-4b
+  --revision v0.2.1 --local-dir fev-4b
 cd fev-4b
 uv venv --python 3.12
 uv pip install -r requirements.txt -r requirements-serve.txt

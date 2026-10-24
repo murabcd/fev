@@ -1,6 +1,6 @@
 # Release composition
 
-## v0.2.1 candidate (unpublished)
+## v0.2.1
 
 Adds opt-in compiled execution, an explicit verified adapter overlay, native shared-adapter training, grouped dataset splitting, separate temperature calibration, typed benchmark tooling and the `fev-finetune` agent skill. The baseline checkpoint, original shared adapter, tokenizer, native source, temperature and routing policy remain unchanged. Reference execution stays the default. Research training outputs are separate overlays and are not adopted or distributed as released weights. Benchmark methods and limitations are recorded in [BENCHMARKS.md](BENCHMARKS.md).
 
