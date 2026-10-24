@@ -114,10 +114,10 @@ Checkpoint and adapter files retain their original precision and hashes. Exact a
 
 The new common native typed-decision comparison against pinned Kev-4B and Jev is documented in [BENCHMARKS.md](BENCHMARKS.md), with separate public-development and authored-Russian denominators, probability metrics and reproducibility commands. It is distinct from the routing-composition evidence below.
 
-| Native comparison | Fev‑4B | Kev‑4B | Jev‑1.14.0 |
+| Native comparison | Kev‑4B | **Fev‑4B** | Jev‑1.14.0 |
 |---|---:|---:|---:|
-| Public development | 83.6% | 80.2% | 84.6% |
-| Russian probes | 100.0% | 99.3% | 100.0% |
+| Public development | 80.2% | **83.6%** | 84.6% |
+| Russian probes | 99.3% | **100.0%** | 100.0% |
 
 Public development: 764 questions. Authored Russian probes: 144 questions.
 

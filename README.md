@@ -34,8 +34,8 @@ The context limit is an execution bound, not a measured long-document accuracy g
 
 | Model | Public dev. | Russian probes | Combined | Brier ↓ |
 |---|---:|---:|---:|---:|
-| **Fev‑4B** | **83.6%** | **100.0%** | **86.2%** | **0.2330** |
 | Kev‑4B | 80.2% | 99.3% | 83.3% | 0.2543 |
+| **Fev‑4B** | **83.6%** | **100.0%** | **86.2%** | **0.2330** |
 | Jev‑1.14.0 | 84.6% | 100.0% | 87.0% | 0.2250 |
 
 Public development: 764 questions. Authored Russian probes: 144 questions. Combined: 908 questions. Brier is measured on the public split; lower is better.
