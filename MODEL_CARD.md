@@ -138,6 +138,8 @@ There were 48 / 48 consistent route-order pairs and 16 / 16 instruction-switch p
 
 These results measure the routing composition. They do not establish general typed-task accuracy, unseen-customer generalization, resolved-conversation coverage or production readiness. API contract tests are separate from model-quality evaluation.
 
+**Release verification.** The complete package passed a CUDA A10G smoke check through the real TypeSafe Python SDK. Mixed Choice/Noul/Score requests used one backbone forward and generated zero tokens; plain JSON and zstd produced identical answers. Routing before and after typed calls passed the strict same-job comparison. Historical probability differences are reported separately. All 303 saved routing decisions also replayed unchanged locally. See [API verification](evaluation/api-verification.json). This is interface and packaging evidence, not a new accuracy benchmark.
+
 ## Compute and serving
 
 The sequential 303-case run on one A10G had a median model time of 613 ms and p95 of 2,442 ms, excluding download, model loading, network and queueing. The first case took 50.6 seconds including cold kernel initialization. Peak allocated GPU memory was 10.01 GB and reserved memory was 10.45 GB (decimal units).
@@ -154,4 +156,4 @@ The reference server serializes requests. Concurrent throughput, production cost
 
 ## License and reproducibility
 
-Apache-2.0. Preserve [LICENSE](LICENSE), [NOTICE](NOTICE) and bundled upstream notices. [manifest.json](manifest.json) records package hashes. Pin the `v0.2.0` tag or its commit when downloading. Weights are hosted on Hugging Face; source and usage examples are maintained on [GitHub](https://github.com/murabcd/fev).
+Apache-2.0. Preserve [LICENSE](https://huggingface.co/murabcd/fev-4b/blob/main/LICENSE), [NOTICE](https://huggingface.co/murabcd/fev-4b/blob/main/NOTICE) and bundled upstream notices. [manifest.json](https://huggingface.co/murabcd/fev-4b/blob/main/manifest.json) records package hashes. Pin the `v0.2.0` tag or its commit when downloading. Weights are hosted on Hugging Face; source and usage examples are maintained on [GitHub](https://github.com/murabcd/fev).

@@ -1,0 +1,121 @@
+{
+  "model": "Fev-4B",
+  "version": "0.1.0",
+  "evidence": "Already-consumed synthetic and source-derived development cases; not a fresh human-gold or production benchmark.",
+  "summary": {
+    "correctAutomaticRoute": 258,
+    "wrongAutomaticRoute": 4,
+    "correctClarification": 35,
+    "unnecessaryClarification": 6,
+    "count": 303,
+    "correct": 293,
+    "agreementPercent": 96.6996699669967,
+    "automaticRoutes": 262,
+    "precisionAmongAutomaticPercent": 98.47328244274809
+  },
+  "groups": {
+    "earlier": {
+      "correctAutomaticRoute": 49,
+      "wrongAutomaticRoute": 0,
+      "correctClarification": 13,
+      "unnecessaryClarification": 2,
+      "count": 64,
+      "correct": 62,
+      "agreementPercent": 96.875,
+      "automaticRoutes": 49,
+      "precisionAmongAutomaticPercent": 100.0
+    },
+    "taxonomy": {
+      "correctAutomaticRoute": 54,
+      "wrongAutomaticRoute": 0,
+      "correctClarification": 0,
+      "unnecessaryClarification": 1,
+      "count": 55,
+      "correct": 54,
+      "agreementPercent": 98.18181818181819,
+      "automaticRoutes": 54,
+      "precisionAmongAutomaticPercent": 100.0
+    },
+    "boundary": {
+      "correctAutomaticRoute": 45,
+      "wrongAutomaticRoute": 4,
+      "correctClarification": 2,
+      "unnecessaryClarification": 1,
+      "count": 52,
+      "correct": 47,
+      "agreementPercent": 90.38461538461539,
+      "automaticRoutes": 49,
+      "precisionAmongAutomaticPercent": 91.83673469387755
+    },
+    "generic": {
+      "correctAutomaticRoute": 78,
+      "wrongAutomaticRoute": 0,
+      "correctClarification": 20,
+      "unnecessaryClarification": 2,
+      "count": 100,
+      "correct": 98,
+      "agreementPercent": 98.0,
+      "automaticRoutes": 78,
+      "precisionAmongAutomaticPercent": 100.0
+    },
+    "instructionSwitch": {
+      "correctAutomaticRoute": 32,
+      "wrongAutomaticRoute": 0,
+      "correctClarification": 0,
+      "unnecessaryClarification": 0,
+      "count": 32,
+      "correct": 32,
+      "agreementPercent": 100.0,
+      "automaticRoutes": 32,
+      "precisionAmongAutomaticPercent": 100.0
+    }
+  },
+  "nonDisputed": {
+    "correctAutomaticRoute": 258,
+    "wrongAutomaticRoute": 0,
+    "correctClarification": 35,
+    "unnecessaryClarification": 5,
+    "count": 298,
+    "correct": 293,
+    "agreementPercent": 98.32214765100672,
+    "automaticRoutes": 258,
+    "precisionAmongAutomaticPercent": 100.0
+  },
+  "disputed": {
+    "correctAutomaticRoute": 0,
+    "wrongAutomaticRoute": 4,
+    "correctClarification": 0,
+    "unnecessaryClarification": 1,
+    "count": 5,
+    "correct": 0,
+    "agreementPercent": 0.0,
+    "automaticRoutes": 4,
+    "precisionAmongAutomaticPercent": 0.0
+  },
+  "latency": {
+    "medianMs": 613.3919660001084,
+    "p95Ms": 2442.3711829999775,
+    "firstCaseMs": 50591.25829099992,
+    "warmMedianMs": 607.4848055000075,
+    "totalInferenceSeconds": 480.76598678200116,
+    "meaning": "Sequential native primary plus optional applicability on one A10G; excludes queue/model load/network. Not production capacity."
+  },
+  "resource": {
+    "routingCount": 303,
+    "repeatCount": 8,
+    "allParametersUnchanged": true,
+    "trainingPerformed": false,
+    "peakAllocatedBytes": 10014128640,
+    "peakReservedBytes": 10445914112,
+    "gpu": "NVIDIA A10G",
+    "torch": "2.14.0+cu130",
+    "transformers": "5.17.0"
+  },
+  "routeOrderPairsConsistent": 48,
+  "routeOrderPairCount": 48,
+  "policyPairsBothCorrect": 16,
+  "policyPairCount": 16,
+  "referenceLabelsIndependentlyHumanVerified": false,
+  "freshValidationRead": false,
+  "productionReplacementQualified": false
+}

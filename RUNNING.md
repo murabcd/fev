@@ -18,7 +18,7 @@ uv pip install -r requirements.txt -r requirements-test.txt
 .venv/bin/python run.py --input examples/request.json
 ```
 
-The integrity-only command needs the Python standard library and streams files without loading tensors. `Fev4B` verifies the package before loading. Keep the full directory intact, including `checkpoint/source/src`, the adapter and runtime modules. No `AutoModelForCausalLM`, chat template inference, token generation, adapter merging or quantization is involved.
+The integrity-only command needs the Python standard library and streams files without loading tensors. `Fev4B` verifies the package before loading. Keep the full directory intact, including `checkpoint/source/src`, the adapter and runtime modules. No token generation, adapter merging or quantization is involved.
 
 Download the package and Python wheels before moving to an isolated server. Runtime sets `HF_HUB_OFFLINE=1` and `TRANSFORMERS_OFFLINE=1` and loads only local files. The public Hub distributes files; it is not a production inference dependency. Host and execute within your required data region.
 

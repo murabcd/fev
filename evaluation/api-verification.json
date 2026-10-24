@@ -1,0 +1,86 @@
+{
+  "model": "Fev-4B",
+  "version": "0.2.0",
+  "testedRepo": "murabcd/fev-4b",
+  "testedCommit": "f8431012284358cafe574e9680369676baba9caf",
+  "complete": true,
+  "purpose": "Typed API packaging/integration smoke; not fresh quality evidence",
+  "fullPackageHashVerification": {
+    "model": "Fev-4B",
+    "version": "0.2.0",
+    "verifiedFiles": 59,
+    "totalBytes": 9141746564
+  },
+  "typedQuestionKinds": [
+    "choice",
+    "noul",
+    "score"
+  ],
+  "realTypeSafeSdk": "0.7.5",
+  "httpPlainAndZstdPassed": true,
+  "typedForwardPasses": [
+    1,
+    1
+  ],
+  "zeroGeneratedTokens": true,
+  "sameInputRepeatPassed": true,
+  "typedAnswers": {
+    "topic": {
+      "type": "choice",
+      "choice": "billing",
+      "confidence": 0.9633823340627203,
+      "probabilities": {
+        "billing": 0.9816911670313602,
+        "delivery": 0.018308832968639836
+      }
+    },
+    "refund": {
+      "type": "noul",
+      "noul": 0.9754031969264387
+    },
+    "urgency": {
+      "type": "score",
+      "score": 1.0283379554748535,
+      "confidence": 0.5758446753025055,
+      "legend": {
+        "0": "Можно подождать",
+        "1": "Нужно решить в ближайшее время",
+        "2": "Нужна немедленная помощь"
+      },
+      "probabilities": {
+        "0": 0.1272161304950714,
+        "1": 0.7172297835350037,
+        "2": 0.15555408596992493
+      }
+    }
+  },
+  "routingControlMatches": true,
+  "routingSameJobBeforeAfterPassed": true,
+  "routingSameJobBeforeAfterMaxDelta": 0.0,
+  "historicalDifferencesAreDescriptiveOnly": true,
+  "routingHistoricalMaxDelta": 0.0,
+  "offlineExternalNetworkGuard": true,
+  "publicUnauthenticatedDownload": true,
+  "gpu": "NVIDIA A10G",
+  "torch": "2.14.0+cu130",
+  "peakAllocatedBytes": 9565292544,
+  "peakReservedBytes": 9577693184,
+  "elapsedSeconds": 139.68614985900058,
+  "trainingPerformed": false,
+  "weightsModified": false,
+  "initialSmokeGateCorrection": {
+    "jobId": "6adc8bec1e112550ce7dee64",
+    "status": "failed_historical_probability_gate",
+    "reason": "Exact numerical comparison was incorrectly applied across historical GPU runs; no historical delta was saved. Replaced with same-job before/after comparison. No weights or inference code changed."
+  },
+  "jobUrl": "https://huggingface.co/jobs/murabcd/6adc8d5e046eb82b1ecdbe38",
+  "computeCapUsd": 0.14,
+  "localTests": {
+    "protocolTests": 10,
+    "allPassed": true,
+    "realSdkWithFakeModel": true,
+    "savedRoutingReplayCases": 303,
+    "sameDecisionsAndRequests": true,
+    "newQualityEvidence": false
+  }
+}
