@@ -1,98 +1,90 @@
-# Training Fev-4B
+# Running a Fev-4B training experiment
 
-Training is optional. Customer categories, business rules, examples and actual conversation history are runtime inputs. The default Fev checkpoint remains shared across customers. This workflow continues the released rank-8, alpha-16 adapter (10,387,456 FP32 parameters); the BF16 backbone and native readout stay frozen. It uses decision cross-entropy, not next-token/chat SFT.
+## Model and environment
 
-## Environment and baseline
+This workflow continues the released rank-8, alpha-16 adapter: 10,387,456 FP32 trainable parameters. The BF16 backbone and native decision readout stay frozen. Training minimizes typed decision cross-entropy, not next-token prediction. Use labelled Choice, Noul and Score requests as described in [data-and-evaluation.md](data-and-evaluation.md).
 
-Use Linux, Python 3.12 and a BF16-capable NVIDIA GPU. An A10G 24 GB is the research reference. The short smoke workload does not establish memory requirements at the 16,384-token limit. An 8 GB Mac can prepare data and run contract tests; use a GPU server or a bounded Hugging Face Job for training.
+Use Linux, Python 3.12 and a BF16-capable NVIDIA GPU for training. The repository's recorded short training smoke check used an A10G 24 GB; it does not establish memory requirements at the 16,384-token limit. The bundled data/report helpers and contract tests do not require CUDA or model weights. Do not install the GPU stack on a machine used only for data preparation.
 
-In a checkout containing the training tools:
+In the reviewed source checkout, install pinned dependencies and download the separately pinned model package:
 
 ```bash
 uv venv --python 3.12
 uv pip install -r requirements.txt -r requirements-test.txt
 uvx --from huggingface-hub==1.31.0 hf download murabcd/fev-4b \
-  --revision v0.2.0 --local-dir models/fev-4b
+  --revision "$MODEL_REVISION" --local-dir models/fev-4b
 .venv/bin/python run.py --model-dir models/fev-4b --verify-only
 ```
 
-The unchanged v0.2.0 package is an explicit baseline. Pin its immutable commit for a recorded experiment. Do not train on published benchmark inputs. Do not interpret multiple-domain metadata alone as evidence of generalization.
+`MODEL_REVISION` must be the full 40-character Hub commit selected for the baseline. It is distinct from the Git source revision. Verification checks the complete package's hashes; it does not authenticate an unknown publisher.
 
-## Labelled data
+## Local GPU execution
 
-Use one JSON object per line. `id` must be unique. `domain` identifies the application domain; `group` joins a document, paraphrase family or generation template so it cannot cross splits. Each question includes its normal typed request and a `label`:
+Freeze the partitions before starting. Use at least two application domains in training. Set the run directory to a new location and keep all previous outputs. `STEPS`, `LEARNING_RATE` and `SEED` must be selected from development evidence before reading the final test. Six steps on the included toy corpus check mechanics only.
 
-```json
-{"id":"library-001","group":"library-reservation-family-a","domain":"library","state":{"request":"Отмените бронь книги","reserved":2,"limit":4},"questions":{"action":{"type":"choice","instructions":"Выберите текущую просьбу.","criteria":{"cancel":"Отменить бронь","change":"Изменить бронь","info":"Запросить информацию"},"label":"cancel"},"capacity":{"type":"noul","instructions":"Количество reserved меньше limit?","label":true},"load":{"type":"score","instructions":"Оцените reserved.","criteria":["Меньше 2","От 2 до 4 включительно","Больше 4"],"label":1}}}
-```
-
-Choice labels are option keys; Noul labels are JSON booleans; Score labels are zero-based integer indices into the rubric. `label` and dataset metadata are removed before inference. Include `domain` on every training record and at least two training domains. Use group IDs across domains when one template/source produced both. Review ambiguous definitions and labels instead of letting a model's prediction become its own gold answer.
-
-`examples/training.jsonl` contains controlled toy examples for mechanics only. It is not a production training corpus or a quality benchmark.
+Run these commands from the source checkout:
 
 ```bash
-.venv/bin/python -m fev4b.data --data examples/training.jsonl --out work/split --seed 42
-```
-
-The deterministic split uses connected exact states and supplied groups: about 70% training and 10% each development, calibration and test by group count. It needs at least four independent groups. It does not detect fuzzy duplicates; choose meaningful family groups and audit the result. For cross-domain evidence, also hold out entire domains explicitly rather than relying on a random group split.
-
-## Train, calibrate, test
-
-Run a baseline on the frozen development partition, then take one predeclared bounded run. The trainer records its own development baseline and rejects overlap, oversized requests and a changed adapter architecture. It never truncates rules and never writes into the original model directory.
-
-```bash
-.venv/bin/python -m fev4b.train \
-  --model-dir models/fev-4b \
+.venv/bin/python -m fev4b.train --model-dir models/fev-4b \
   --train work/split/train.jsonl --development work/split/development.jsonl \
-  --steps 6 --learning-rate 0.00002 --seed 42 --out work/adapter-smoke
+  --steps "$STEPS" --learning-rate "$LEARNING_RATE" --seed "$SEED" \
+  --out work/run/adapter
 
-.venv/bin/python -m fev4b.calibrate \
-  --model-dir models/fev-4b --adaptation-dir work/adapter-smoke \
-  --data work/split/calibration.jsonl --out work/calibrated-smoke
-
-.venv/bin/python -m fev4b.benchmark \
-  --model-dir models/fev-4b --adaptation-dir work/calibrated-smoke \
-  --data work/split/test.jsonl --out work/test-once
+.venv/bin/python -m fev4b.calibrate --model-dir models/fev-4b \
+  --adaptation-dir work/run/adapter --data work/split/calibration.jsonl \
+  --out work/run/calibrated
 ```
 
-Six steps on the toy file test the machinery; they are not a recommended training duration or an improved released model. Select step count and learning rate using development data before opening a final test. Output directories must be new. Preserve failed-run evidence instead of overwriting it.
+The trainer records baseline/adapted **development** predictions, finite losses/gradients, changed adapter tensors and frozen parameter versions. It writes `adaptation.json`, adapter weights/config and `training-report.json`. The loader verifies the overlay's base identity, tensor keys/shapes/dtypes, finite payload and file hashes. An overlay is loaded only when explicitly selected; the original model directory is unchanged.
 
-The trainer verifies adapter-only gradients, frozen parameter versions, finite losses and an actual adapter update. Its outputs include weights/config, `adaptation.json`, baseline/adapted predictions and a training report. The loader checks the base identity, adapter configuration, tensor keys/shapes/dtypes, finite values and payload SHA256. Checksums detect accidental changes; they do not authenticate an untrusted publisher.
+The encoder rejects requests beyond its single-sequence context rather than truncating rules. An out-of-memory error calls for inspecting actual planned token lengths and resource use; do not silently shorten requests or change the model size. A failed run is evidence to retain, not a reason to retry unchanged.
 
-Calibration fits one positive temperature by calibration NLL. It preserves per-question option ranking mathematically, but can change routing cutoffs, coverage and applicability decisions. Evaluate the complete routing composition before adopting a calibrated overlay. The base loader's fixed thresholds are not correctness guarantees.
-
-The benchmark reports all questions in the accuracy denominator, including failures; Brier/NLL/ECE use answered questions and disclose their count. It also reports fixed-threshold coverage and errors. For Score, probabilities and expected ordinal position matter as well as top-level accuracy. ECE on a small or synthetic sample is not proof of general calibration.
-
-Compare unchanged baseline and candidate on exactly the same untouched test data. For a predeclared final comparison, also save the unchanged baseline:
+For the predeclared final comparison, run all three on exactly the same test file:
 
 ```bash
 .venv/bin/python -m fev4b.benchmark --model-dir models/fev-4b \
-  --data work/split/test.jsonl --out work/baseline-test
+  --data work/split/test.jsonl --out work/run/baseline-test
+.venv/bin/python -m fev4b.benchmark --model-dir models/fev-4b \
+  --adaptation-dir work/run/adapter --data work/split/test.jsonl --out work/run/raw-test
+.venv/bin/python -m fev4b.benchmark --model-dir models/fev-4b \
+  --adaptation-dir work/run/calibrated --data work/split/test.jsonl --out work/run/test
 ```
 
-The baseline and candidate may both read the frozen test in that final comparison; do not use the result to tune and retest the same candidate family. Retain original labels and raw responses, inspect confident mistakes, and report denominators separately by source/type/domain. Do not select among repeated candidates on the final test. A failed generalization check is a reason to retain the baseline.
+Run `scripts/compare.py` from the installed skill against baseline/raw and baseline/calibrated separately. Failed predictions remain in the denominator. Calibration fits a positive temperature on calibration NLL only. It preserves option ranking mathematically, but can change threshold-based routing and applicability. Validate the complete routing composition before adoption. Comparing raw and calibrated adapters separately avoids attributing a calibration gain to weight training.
 
-## Load an explicit overlay
+Once final predictions are opened, use them for the adoption decision. Further tuning requires a new independent final test. Keep any additional regression corpus frozen and separate from training; a transfer improvement does not excuse unacceptable regressions on previously supported behavior.
 
-```bash
-.venv/bin/python serve.py --model-dir models/fev-4b \
-  --adaptation-dir work/calibrated-smoke --port 8000
-```
+## Bounded Hugging Face Job
 
-No overlay is discovered or adopted automatically. It must match the exact packaged checkpoint/original adapter. Do not distribute mechanics-only toy overlays as a new Fev release.
+The skill's `package_job.py` prepares `work/cloud-inputs` from a reviewed checkout and four validated partitions. `package.json` records source commit, source dirty status and each input SHA256. Use clean reviewed source for a real run. The worker checks those hashes and partition isolation before downloading weights.
 
-## Hugging Face GPU Job
+`train_hf.py` has pinned UV dependencies. It runs training, calibration, unchanged baseline, raw candidate and calibrated candidate, then writes both paired reports. It never publishes model weights or automatically adopts an overlay.
 
-The repository provides `tools/train_hf.py`, a UV script with pinned dependencies. It downloads an immutable model revision and uses a separate source ZIP and four input partitions. Outputs go only to the mounted output directory. It does not upload to a model repository.
-
-Prepare a source ZIP containing `fev/` and `fev4b/` Python files from the same reviewed checkout; exclude credentials, environments and weights. Put it at `cloud-inputs/source.zip` beside the four JSONL files. Record its SHA256 and the data hashes before allocation. Run `hf auth whoami`, inspect `hf jobs hardware` pricing, and create/use a **private** output bucket. Keep a timeout and record the returned job ID:
+Before submission, check `hf auth whoami`, `hf jobs ps` and `hf jobs hardware`. Confirm the data destination and a private output bucket, save the planned resource/time/compute cap and create a unique run ID. The following is a **submission template**, not a command to execute merely because the skill is installed:
 
 ```bash
 hf jobs uv run --flavor a10g-small --timeout 20m --detach \
-  --volume ./cloud-inputs:/inputs \
+  --volume ./work/cloud-inputs:/inputs \
   --volume hf://buckets/YOUR_USER/YOUR_PRIVATE_BUCKET:/outputs:rw \
-  tools/train_hf.py --inputs /inputs --output /outputs/UNIQUE_RUN \
-  --revision 18ab9ad9f0000345eade9f001f16085ef4a34370 --steps 6
+  work/cloud-inputs/train_hf.py --inputs /inputs --output /outputs/UNIQUE_RUN \
+  --revision "$MODEL_REVISION" --steps "$STEPS" \
+  --learning-rate "$LEARNING_RATE" --seed "$SEED"
 ```
 
-Local-directory mounts upload their contents to HF. Use only data approved for that destination. The example performs one training/calibration/test sequence; it does not run a tuning loop. The output path must be new. A job timeout limits runtime, not all account costs; check current pricing first. Inspect logs/results and confirm the job finished before allocating a follow-up. Production inference can remain wholly inside the required region after downloading files and dependencies.
+Local directory mounts upload their contents. Inspect the package and destination permissions first. Never include credentials in the source ZIP, dataset or command. A timeout bounds job duration, not all account charges; choose the cap from current pricing and expected workload, including model loading and all three final evaluations. See the official [Jobs guide](https://huggingface.co/docs/huggingface_hub/guides/jobs) for current CLI behavior and billing.
+
+Save the returned job ID immediately. Inspect `hf jobs inspect JOB_ID` and `hf jobs logs JOB_ID`; do not blindly resubmit after a connection error. Cancel an unwanted job with `hf jobs cancel JOB_ID` and verify its final status. Only stop jobs belonging to this experiment.
+
+## Outputs and failure handling
+
+| Path within the run | Contents |
+|---|---|
+| `intent.json`, `source/` | Pinned model revision, configuration, input hashes and executed source |
+| `adapter/`, `calibrated/` | Explicit raw and temperature-calibrated overlays |
+| `baseline-test/`, `raw-test/`, `test/` | Raw predictions, question rows, metrics and provenance for each variant |
+| `comparison-raw/`, `comparison/` | Paired report, domain/type/source breakdowns and candidate error list |
+| `complete.json` | Pipeline completion, prediction error counts and `adopted: false` |
+
+`complete.json` means the sequence finished, not that quality passed. Saved prediction failures still cause a nonzero worker exit after reporting. Infrastructure or training failures may leave only partial outputs. Missing reports, changed hashes, leakage, nonfinite loss, changed frozen parameters or reload mismatch all block adoption. Preserve logs and report the failed stage; do not overwrite it with a clean-looking retry.
+
+After downloading private artifacts, verify hashes and read both paired reports. Additional serving qualification requires separate latency, memory, concurrency, reliability and hardware measurements. Training scores alone do not establish deployment economics. To inspect a reviewed overlay locally, explicitly pass `--adaptation-dir work/run/calibrated` to `serve.py`; publication or deployment is a separate decision.

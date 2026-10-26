@@ -1,0 +1,20 @@
+{
+  "action": {
+    "type": "choice",
+    "instructions": "Select the action explicitly requested in the message.",
+    "criteria": {
+      "cancel": "Cancel an existing reservation or request",
+      "change": "Change an existing reservation or request",
+      "info": "Ask for information without requesting a change"
+    }
+  },
+  "cancel_requested": {
+    "type": "noul",
+    "instructions": "Does the message explicitly request cancellation?"
+  },
+  "urgency": {
+    "type": "score",
+    "instructions": "Rate the explicitly stated urgency, without inventing a deadline.",
+    "criteria": ["No deadline stated", "A deadline is stated", "Immediate action explicitly requested"]
+  }
+}

@@ -125,9 +125,9 @@ Install `requirements-test.txt` alongside `requirements.txt` for the tools. Six 
 
 | Skill | Purpose | Install |
 |---|---|---|
-| [fev-finetune](skills/fev-finetune/SKILL.md) | Prepare labelled decisions, train a shared adapter, calibrate and compare on separate data | `npx skills add murabcd/fev@fev-finetune` |
+| [fev-finetune](skills/fev-finetune/SKILL.md) | Prepare CSV/JSONL, package a GPU run, train, calibrate and report paired results | `npx skills add murabcd/fev@fev-finetune` |
 
-The skill is distributed from this repository in standard `SKILL.md` format. Its instructions keep the downloaded base immutable and require evidence before adopting an overlay.
+The skill includes runnable helpers for pinned setup, grouped data splits, private job packaging and paired reports with family-cluster uncertainty. It keeps the downloaded base immutable and requires evidence before adopting an overlay. [View on skills.sh](https://skills.sh/murabcd/fev/fev-finetune).
 
 ## Serve Your Own Endpoint
 
